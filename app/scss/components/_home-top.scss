@@ -1,0 +1,101 @@
+.top {
+  position: relative;
+  min-height: 100vh;
+  background-image: url("../images/home-top-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  &__inner {
+    @include flex;
+  }
+  &__content {
+    max-width: 805px;
+    padding-top: 260px;
+  }
+  &__title {
+    position: relative;
+    @extend %reem-700;
+    text-transform: none;
+    font-size: 85px;
+    line-height: 118px;
+    letter-spacing: -2px;
+    margin-bottom: 20px;
+    z-index: 1;
+    span {
+      color: transparent;
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: #fff;
+    }
+
+    &::before {
+      position: absolute;
+      content: '';
+      background-image: url('../images/top-decor.svg');
+      background-repeat: no-repeat;
+      width: 244px;
+      height: 150px;
+      top: 97px;
+      right: 40px;
+      z-index: -1;
+    }
+  }
+  &__text {
+    margin-bottom: 40px;
+    @extend %poppins-500;
+    font-size: 18px;
+    line-height: 28px;
+    text-transform: capitalize;
+  }
+  &__links {
+    @include flex;
+    margin-bottom: 40px;
+  }
+  &__link {
+    display: block;
+    color: $white;
+    @extend %poppins-500;
+    font-size: 22px;
+    line-height: 28px;
+    padding: 13px 49px;
+    border-radius: 50px;
+    border: 1px solid $default;
+    transition: all .3s linear;
+
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+    &:hover {
+      background: $gradient;
+      border: 1px solid transparent;
+    }
+  }
+  &__link--fill {
+    background: $gradient;
+    border: 1px solid transparent;
+    &:hover {
+      border: 1px solid transparent;
+      background: $gradient-hover;
+    }
+  }
+  &__list {
+    @include flex;
+  }
+  &__item {
+    @extend %reem-400;
+    &:not(:last-child) {
+      margin-right: 50px;
+    }
+  }
+  &__item-num {
+    @extend %reem-400;
+    font-size: 46px;
+    line-height: 69px;
+    text-transform: uppercase;
+    color: $white;
+  }
+  &__item-descr {
+    font-size: 24px;
+    line-height: 36px;
+  }
+}

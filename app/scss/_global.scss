@@ -1,45 +1,58 @@
-
 body,
-html{
+html {
   height: 100%;
 }
-body{
+body {
   position: relative;
+  color: $default;
+  @extend %poppins-400;
+  font-size: 17px;
+  line-height: 30px;
 }
 
 //Класс, для того, чтоб страница не скроллилась после открытия меню
-body.hidden{
+body.hidden {
   overflow: hidden;
 }
 
-.wrapper{
+.wrapper {
   display: flex;
   flex-direction: column;
   overflow: hidden;
   min-height: 100%;
 }
 
-.main{
+.main {
   flex-grow: 1;
 }
 
-.container{
-  max-width: 1230px;
+.container-content {
+  max-width: 1670px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.container {
+  max-width: 1320px;
   padding: 0 15px;
   margin: 0 auto;
 }
 
 .visually-hidden {
-	position: absolute !important;
-	clip: rect(1px 1px 1px 1px);
-	clip: rect(1px, 1px, 1px, 1px);
-	padding:0 !important;
-	border:0 !important;
-	height: 1px !important; 
-	width: 1px !important; 
-	overflow: hidden;
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
 }
 
-.title{
-  // color: $title;
+.title {
+  @extend %gilroy-800;
+  font-size: 60px;
+  line-height: 74px;
+  text-transform: capitalize;
+  color: $white;
 }

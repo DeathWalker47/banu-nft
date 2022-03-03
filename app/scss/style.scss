@@ -5,4 +5,16 @@
 @import "global";
 @import "mixins";
 
+
+//Большие компоненты страницы
+@import "components/header";
+// @import "components/footer";
+
+
+//Компоненты главной страницы
+@import "components/home-top";
+
+//Маленькие компоненты
+
+
 @import "media";
