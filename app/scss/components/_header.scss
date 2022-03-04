@@ -51,7 +51,8 @@
   }
   &__notific {
     position: relative;
-    padding: 8px 12px;
+    @include flex-all-center;
+    padding: 10px 12px;
     margin-right: 30px;
     border: 1px solid $default;
     border-radius: 50%;

@@ -1,0 +1,190 @@
+.cards {
+  // display: grid;
+  // grid-template-columns: repeat(4, 1fr);
+  // grid-template-rows: auto;
+  &__item {
+    &--top-left {
+      margin-right: 45px;
+      transform: translateY(31px);
+    }
+  }
+}
+.card-item {
+  width: 300px;
+  padding: 16px 15px;
+  background-color: $main-bg;
+  border-radius: 8px;
+  &__top {
+    position: relative;
+    width: 270px;
+    height: 290px;
+    margin-bottom: 14px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  &__likes {
+    @include flex-v-center;
+    position: absolute;
+    top: 14px;
+    right: 17px;
+    border-radius: 8px;
+    padding: 0 6px;
+    background-color: $main-bg;
+  }
+  &__likes-btn {
+    padding: 0;
+    border: none;
+    height: 25px;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  &__likes-img {
+    width: 16px;
+    height: 15px;
+  }
+  &__likes-num {
+    color: $white;
+    font-size: 14px;
+    line-height: 12px;
+    padding-left: 7px;
+  }
+  &__content {
+    padding-bottom: 18px;
+    border-bottom: 1px dashed $default;
+    margin-bottom: 22px;
+  }
+  &__content-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+  }
+  &__content-title {
+    @extend %poppins-500;
+    color: $white;
+    font-size: 18px;
+  }
+  &__content-dots {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    padding-top: 8px;
+    cursor: pointer;
+
+    &:hover {
+      .card-item__content-dots-img {
+        stroke: $accent;
+      }
+    }
+  }
+  &__content-dots-img {
+    width: 30px;
+    height: 16px;
+    stroke: $default;
+    transition: all .3s linear;
+
+  }
+  &__peoples {
+    display: flex;
+    align-items: center;
+    margin-bottom: 19px;
+  }
+  &__peoples-links {
+    display: flex;
+    margin-right: 12px;
+    z-index: 3;
+  }
+  &__peoples-link {
+    width: 32px;
+    height: 32px;
+    display: block;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 3;
+
+    &:nth-child(2) {
+      margin-left: -17px;
+      z-index: 2;
+    }
+    &:nth-child(3) {
+      margin-left: -17px;
+      z-index: 1;
+    }
+  }
+  &__people-img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  &__people-text {
+    font-size: 14px;
+    transition: color .3s ease-in-out;
+
+    &:hover {
+      color: $accent;
+    }
+  }
+  &__owned {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__owned-text {
+    font-size: 16px;
+    text-transform: capitalize;
+    a {
+      color: $white;
+      transition: color .3s linear;
+  
+      &:hover {
+        color: $accent;
+      }
+    }
+  }
+  &__owned-eth {
+    position: relative;
+    display: flex;
+    font-size: 16px;
+    color: $white;
+    padding-left: 24px;
+
+    &::before {
+      position: absolute;
+      content: '';
+      background-image: url('../images/svg/arrow-up.svg');
+      width: 15px;
+      height: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0px;
+    }
+  }
+  &__bid {
+    position: relative;
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: $white;
+    // background-color: $dark;
+    border-radius: 8px;
+    padding: 6px;
+
+    &::before {
+      position: absolute;
+      content: '';
+      background-image: url('../images/svg/bag.svg');
+      background-repeat: no-repeat;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 25%;      
+      width: 17px;
+      height: 20px;
+    }
+    
+  }
+}

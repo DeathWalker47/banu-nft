@@ -56,3 +56,11 @@ body.hidden {
   text-transform: capitalize;
   color: $white;
 }
+
+.btn-fill {
+  background: $dark;
+  transition:  all .3s linear;
+  &:hover {
+    background: $gradient;
+  }
+}
