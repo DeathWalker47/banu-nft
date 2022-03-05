@@ -3,6 +3,7 @@
   // grid-template-columns: repeat(4, 1fr);
   // grid-template-rows: auto;
   &__item {
+    width: 300px;
     &--top-left {
       margin-right: 45px;
       transform: translateY(31px);
@@ -10,7 +11,7 @@
   }
 }
 .card-item {
-  width: 300px;
+  // width: 300px;
   padding: 16px 15px;
   background-color: $main-bg;
   border-radius: 8px;

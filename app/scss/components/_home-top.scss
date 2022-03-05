@@ -9,6 +9,7 @@
   &__inner {
     @include flex;
     padding-top: 260px;
+    padding-bottom: 148px;
   }
   &__content {
     max-width: 805px;
