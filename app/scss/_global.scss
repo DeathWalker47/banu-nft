@@ -64,3 +64,25 @@ body.hidden {
     background: $gradient;
   }
 }
+
+.link-fill {
+  display: inline-block;
+  background: $gradient;
+  padding: 13px 49px;
+  font-size: 22px;
+  line-height: 28px;
+  color: $white;
+  border-radius: 50px;
+  @extend %poppins-500;
+  transition: all 0.2s linear;
+  &:hover {
+    background: $gradient-hover;
+  }
+}
+
+.btn-reset {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}

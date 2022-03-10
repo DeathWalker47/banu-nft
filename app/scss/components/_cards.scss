@@ -1,7 +1,8 @@
 .cards {
-  // display: grid;
-  // grid-template-columns: repeat(4, 1fr);
-  // grid-template-rows: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 300px);
+  grid-template-rows: auto;
+  grid-gap: 30px;
   &__item {
     width: 300px;
     &--top-left {
@@ -11,16 +12,18 @@
   }
 }
 .card-item {
-  // width: 300px;
   padding: 16px 15px;
   background-color: $main-bg;
   border-radius: 8px;
   &__top {
     position: relative;
+    margin-bottom: 8px;
+  }
+  &__link {
+    display: block;
     width: 270px;
-    height: 290px;
-    margin-bottom: 14px;
-    border-radius: 8px;
+    height: 270px;
+    border-radius: 9px;
     overflow: hidden;
   }
   &__img {
@@ -57,7 +60,7 @@
   &__content {
     padding-bottom: 18px;
     border-bottom: 1px dashed $default;
-    margin-bottom: 22px;
+    margin-bottom: 15px;
   }
   &__content-top {
     display: flex;
@@ -69,6 +72,11 @@
     @extend %poppins-500;
     color: $white;
     font-size: 18px;
+    transition: color .2s ease-in;
+
+    &:hover {
+      color: $accent;
+    }
   }
   &__content-dots {
     border: none;
@@ -93,7 +101,7 @@
   &__peoples {
     display: flex;
     align-items: center;
-    margin-bottom: 19px;
+    margin-bottom: 13px;
   }
   &__peoples-links {
     display: flex;

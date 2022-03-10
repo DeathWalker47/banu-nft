@@ -76,19 +76,10 @@
   }
   &__wallet {
     @include flex-v-center;
-    background: $gradient;
     margin-right: 20px;
-    color: $white;
     padding: 10px 25px;
-    border-radius: 25px;
-    @extend %poppins-500;
     font-size: 16px;
     line-height: 26px;
-    transition: all 0.2s linear;
-    
-    &:hover {
-      background: $gradient-hover;
-    }
   }
   &__wallet-text {
     padding-left: 10px;

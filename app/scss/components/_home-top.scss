@@ -9,7 +9,7 @@
   &__inner {
     @include flex;
     padding-top: 260px;
-    padding-bottom: 148px;
+    padding-bottom: 165px;
   }
   &__content {
     max-width: 805px;
@@ -54,30 +54,18 @@
     margin-bottom: 40px;
   }
   &__link {
-    display: block;
-    color: $white;
-    @extend %poppins-500;
-    font-size: 22px;
-    line-height: 28px;
-    padding: 13px 49px;
-    border-radius: 50px;
-    border: 1px solid $default;
-    transition: all .3s linear;
-
     &:not(:last-child) {
       margin-right: 20px;
     }
-    &:hover {
-      background: $gradient;
-      border: 1px solid transparent;
-    }
   }
-  &__link--fill {
-    background: $gradient;
-    border: 1px solid transparent;
+  &__link--reset {
+    border: 1px solid $default;
+    background: transparent;
+
     &:hover {
-      border: 1px solid transparent;
-      background: $gradient-hover;
+      background: transparent;
+      border: 1px solid $accent;
+      color: $accent;
     }
   }
   &__list {

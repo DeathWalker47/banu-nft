@@ -2,6 +2,7 @@
   
 // });
 
+// Swiper slider
 new Swiper(".creators-swiper", {
   spaceBetween: 30,
   speed: 800,
@@ -10,4 +11,13 @@ new Swiper(".creators-swiper", {
     nextEl: ".creators-swiper-next",
     prevEl: ".creators-swiper-prev",
   },
+});
+
+// Filter MisitUp
+
+var mixer = mixitup('.explore__cards', {
+  animation: {
+    easing: 'ease-in-out',
+    duration: 800,
+}
 });
