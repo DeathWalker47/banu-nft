@@ -8,6 +8,7 @@ body {
   @extend %poppins-400;
   font-size: 17px;
   line-height: 30px;
+  background-color: $dark;
 }
 
 //Класс, для того, чтоб страница не скроллилась после открытия меню
@@ -62,6 +63,9 @@ body.hidden {
   transition:  all .3s linear;
   &:hover {
     background: $gradient;
+    * {
+      color: $white;
+    }
   }
 }
 

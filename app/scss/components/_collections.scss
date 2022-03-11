@@ -1,0 +1,79 @@
+.collections {
+  background-color: $black;
+  padding: 120px 0 120px;
+  &__top {
+    margin-bottom: 60px;
+  }
+  &__items {
+   position: relative;
+  }
+}
+.popular-collections {
+    width: 410px;
+  &__link {
+    display: block;
+    border-radius: 20px;
+    background-color: $main-bg;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  &__big-images {
+    border-radius: 25px;
+    overflow: hidden;
+    width: 370px;
+    height: 240px;
+    margin-bottom: 20px;
+  }
+  &__big-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  &__small-images {
+    display: flex;
+  }
+  &__small-img {
+    width: 110px;
+    height: 110px;
+    border-radius: 25px;
+    overflow: hidden;
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+    img  {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &__descr {
+    @extend %poppins-500;
+    font-size: 18px;
+    line-height: 27px;
+  }
+  &__descr-category {
+    color: $white;
+    transition: color .2s ease-in;
+
+    &:hover {
+      color: $accent;
+    }
+  }
+  &__descr-item {
+    position: relative;
+    display: inline-block;
+    padding-left: 20px;
+
+    &::before {
+      position: absolute;
+      content: '';
+      top: 50%;
+      left: 5px;
+      transform: translateY(-50%);
+      background-color: $default;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+    }
+  }
+}

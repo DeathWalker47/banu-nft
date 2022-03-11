@@ -48,6 +48,12 @@
   &__btn-search {
     width: 24px;
     height: 24px;
+    fill: $default;
+    transition:  fill .2s ease-in;
+
+    &:hover {
+      fill: $white;
+    }
   }
   &__notific {
     position: relative;

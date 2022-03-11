@@ -13,6 +13,16 @@ new Swiper(".creators-swiper", {
   },
 });
 
+new Swiper(".collections-slider", {
+  spaceBetween: 30,
+  speed: 800,
+  slidesPerView: 3,
+  navigation: {
+    nextEl: ".creators-swiper-next",
+    prevEl: ".creators-swiper-prev",
+  },
+});
+
 // Filter MisitUp
 
 var mixer = mixitup('.explore__cards', {

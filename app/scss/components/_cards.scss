@@ -3,6 +3,9 @@
   grid-template-columns: repeat(4, 300px);
   grid-template-rows: auto;
   grid-gap: 30px;
+  &--bottom {
+    margin-bottom: 55px!important;
+  }
   &__item {
     width: 300px;
     &--top-left {
@@ -17,7 +20,7 @@
   border-radius: 8px;
   &__top {
     position: relative;
-    margin-bottom: 8px;
+    margin-bottom: 16px;
   }
   &__link {
     display: block;
@@ -57,10 +60,30 @@
     line-height: 12px;
     padding-left: 7px;
   }
+
+  &__time {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    display: inline-block;
+    padding: 6px 10px;
+    background: $gradient;
+    border-radius: 4px;
+    color: $white;
+    font-size: 16px;
+    line-height: 24px;
+    user-select: none;
+  }
+
   &__content {
     padding-bottom: 18px;
     border-bottom: 1px dashed $default;
     margin-bottom: 15px;
+    &--auctions {
+      border: none;
+      padding-bottom: 0;
+      margin-bottom: 20px;
+    }
   }
   &__content-top {
     display: flex;
@@ -78,11 +101,12 @@
       color: $accent;
     }
   }
-  &__content-dots {
+  &__content-dots,
+  &__like-btn {
     border: none;
     background-color: transparent;
     padding: 0;
-    padding-top: 8px;
+    // padding-top: 8px;
     cursor: pointer;
 
     &:hover {
@@ -96,7 +120,31 @@
     height: 16px;
     stroke: $default;
     transition: all .3s linear;
-
+    vertical-align: middle;
+  }
+  &__like {
+    display: flex;
+    align-items: center;
+  }
+  &__like-btn {
+    &:hover {
+      svg path {
+        stroke: $accent;
+      }
+    }
+  }
+  &__like-img {
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+    vertical-align: middle;
+    path {
+      transition: all .2s ease-in;
+    }
+  }
+  &__like-num {
+    display: inline-block;
+    margin-left: 10px;
   }
   &__peoples {
     display: flex;
@@ -140,7 +188,6 @@
   }
   &__owned {
     display: flex;
-    justify-content: space-between;
     align-items: center;
   }
   &__owned-text {
@@ -157,11 +204,11 @@
   }
   &__owned-eth {
     position: relative;
-    display: flex;
+    // display: flex;
     font-size: 16px;
     color: $white;
     padding-left: 24px;
-
+    margin-left: auto;
     &::before {
       position: absolute;
       content: '';
@@ -173,6 +220,28 @@
       left: 0px;
     }
   }
+  &__owned-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 6px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &__owned-link {
+    @extend %poppins-500;
+    font-size: 16px;
+    line-height: 24px;
+    transition: color .2s ease-in;
+
+    &:hover {
+      color: $white;
+    }
+  }
   &__bid {
     position: relative;
     display: block;
@@ -181,7 +250,7 @@
     color: $white;
     // background-color: $dark;
     border-radius: 8px;
-    padding: 6px;
+    padding: 6px 10px;
 
     &::before {
       position: absolute;
@@ -194,6 +263,20 @@
       width: 17px;
       height: 20px;
     }
-    
+  }
+  &__price {
+    display: flex;
+    align-items: center;
+    span {
+      display: inline-block;
+      margin-right: auto;
+      font-size: 16px;
+      line-height: 25px;
+      color: $default;
+    }
+    &::before,
+    *::before {
+      display: none;
+    }
   }
 }

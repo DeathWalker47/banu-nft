@@ -24,9 +24,18 @@
   right: -67px;
 }
 
-
 .swiper-button-disabled {
   opacity: 0.4;
   pointer-events: none;
 }
 
+.collections-swiper-prev {
+  left: -31px;
+}
+.collections-swiper-next {
+  right: -27px;
+}
+.collections-swiper-next,
+.collections-swiper-prev {
+  transform: translateY(-90%);
+}
