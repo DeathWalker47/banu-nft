@@ -1,0 +1,39 @@
+.questions {
+  padding: 120px 0 120px;
+  &__top {
+    margin-bottom: 60px;
+  }
+  &__items {
+    position: relative;
+  }
+}
+
+.questions-slider {
+
+  &__item {
+    box-sizing: border-box;
+    max-width: 410px;
+    width: 100%;
+    border-radius: 8px;
+    background-color: $main-bg;
+    padding: 40px 30px 50px 40px;
+  }
+  &__img {
+    width: 44px;
+    height: 44px;
+    object-fit: cover;
+    margin-bottom: 26px;
+  }
+  &__title {
+    @extend %poppins-500;
+    font-size: 24px;
+    line-height: 36px;
+    color: $white;
+    margin-bottom: 15px;
+  }
+  &__text {
+    @extend %poppins-400;
+    font-size: 17px;
+    line-height: 30px;
+  }
+}

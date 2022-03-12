@@ -1,8 +1,13 @@
-.creators-swiper-prev {
+.banu-btn-prev {
   left: -71px;
 }
-.creators-swiper-prev,
-.creators-swiper-next {
+
+.banu-btn-next {
+  right: -67px;
+}
+
+.banu-btn-prev,
+.banu-btn-next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -13,15 +18,17 @@
   width: 58px;
   height: 58px;
   border-radius: 50%;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 0.29%, rgba(255, 255, 255, 0.1) 99.71%, rgba(0, 0, 0, 0.5) 99.71%);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.5) 0.29%,
+    rgba(255, 255, 255, 0.1) 99.71%,
+    rgba(0, 0, 0, 0.5) 99.71%
+  );
   cursor: pointer;
   user-select: none;
   &:hover {
     background: $gradient;
   }
-}
-.creators-swiper-next {
-  right: -67px;
 }
 
 .swiper-button-disabled {
@@ -29,13 +36,13 @@
   pointer-events: none;
 }
 
-.collections-swiper-prev {
+.collections-prev {
   left: -31px;
 }
-.collections-swiper-next {
+.collections-next {
   right: -27px;
 }
-.collections-swiper-next,
-.collections-swiper-prev {
+.collections-next,
+.collections-prev {
   transform: translateY(-90%);
 }

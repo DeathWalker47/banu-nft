@@ -8,8 +8,8 @@ new Swiper(".creators-swiper", {
   speed: 800,
   slidesPerView: 6,
   navigation: {
-    nextEl: ".creators-swiper-next",
-    prevEl: ".creators-swiper-prev",
+    nextEl: ".creators-next",
+    prevEl: ".creators-prev",
   },
 });
 
@@ -18,8 +18,18 @@ new Swiper(".collections-slider", {
   speed: 800,
   slidesPerView: 3,
   navigation: {
-    nextEl: ".creators-swiper-next",
-    prevEl: ".creators-swiper-prev",
+    nextEl: ".collections-next",
+    prevEl: ".collections-prev",
+  },
+});
+
+new Swiper(".questions-slider", {
+  spaceBetween: 30,
+  speed: 800,
+  slidesPerView: 3,
+  navigation: {
+    nextEl: ".questions-next",
+    prevEl: ".questions-prev",
   },
 });
 
