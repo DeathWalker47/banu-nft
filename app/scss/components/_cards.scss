@@ -3,6 +3,9 @@
   grid-template-columns: repeat(4, 300px);
   grid-template-rows: auto;
   grid-gap: 30px;
+  &--explore {
+    grid-template-columns: repeat(3, 300px);
+  }
   &--bottom {
     margin-bottom: 55px!important;
   }

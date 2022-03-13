@@ -1,0 +1,115 @@
+.assets {
+  padding: 120px 0 120px;
+  &__top {
+    margin-bottom: 60px;
+  }
+  &__inner {
+    display: grid;
+    align-items: flex-start;
+    grid-gap: 30px;
+    grid-template-columns: repeat(12,1fr);
+  }
+  &__filter {
+    grid-column: 3 span;
+  }
+  &__items {
+    grid-column: 9 span;
+  }
+}
+
+.filter {
+  background-color: $main-bg;
+  border: 1px solid #515151;
+  border-radius: 8px;
+  padding: 20px 22px;
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 21px;
+      border-bottom: 1px solid #515151;
+    }
+  }
+  &__item-title {
+    position: relative;
+    @extend %poppins-500;
+    font-size: 18px;
+    line-height: 18px;
+    text-transform: capitalize;
+    color: $white;
+    margin-bottom: 20px;
+    cursor: pointer;
+  
+    &::before {
+      position: absolute;
+      content: '';
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 12px;
+      height: 5px;
+      background-image: url('../images/icons/arrow-up.svg');
+      background-repeat: no-repeat;
+      transform: rotate(180deg);
+      transition: all .2s linear;
+    }
+    &--arrow {
+      &::before {
+        transform: rotate(0deg);
+      }
+    }
+  }
+  &__form {
+    max-height: 500px;
+    padding-bottom: 20px;
+    transition: all .3s ease-in-out;
+    transition: all .2s linear;
+  }
+  .content-hidden {
+    max-height: 0px;
+    padding-bottom: 0;
+    opacity: 0;
+    visibility: hidden;
+  } 
+  &__form-label {
+    position: relative;
+    display: block;
+    cursor: pointer;
+
+    &:not(:last-child) {
+      margin-bottom: 9px;
+    }
+  }
+  &__form-input {
+    &:checked + .filter__form-box {
+      .filter__form-checkbox {
+        // border-color: $accent;
+        border: none;
+        background-image: url('../../images/icons/chek.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
+      .filter__form-descr {
+        color: $white;
+      }
+    }
+  }
+  &__form-box {
+    display: flex;
+    align-items: center;
+  }
+  &__form-checkbox {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #515151;
+    border-radius: 50%;
+    margin-right: 11px;
+  }
+  &__form-descr {
+    display: inline-block;
+    font-size: 14px;
+    line-height: 18px;
+    text-transform: capitalize;
+    user-select: none;
+  }
+}

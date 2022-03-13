@@ -8,8 +8,8 @@
 
 //Большие компоненты страницы
 @import "components/header";
+@import "components/top-page";
 @import "components/footer";
-// @import "components/footer";
 
 
 //Компоненты главной страницы
@@ -19,6 +19,10 @@
 @import "components/collections";
 @import "components/auctions";
 @import "components/questions";
+
+
+// Компоненты страницы explore
+@import "components/assets";
 
 //Маленькие компоненты
 @import "components/cards";

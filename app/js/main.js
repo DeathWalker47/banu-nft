@@ -41,3 +41,25 @@ var mixer = mixitup('.explore__cards', {
     duration: 800,
 }
 });
+
+// Небольшой аккордеон
+const filterTitle = document.querySelectorAll('.filter__item-title');
+filterTitle.forEach(el => {
+  el.addEventListener('click', () => {
+    const content = el.nextElementSibling;
+    el.classList.toggle('filter__item-title--arrow')
+    content.classList.toggle('content-hidden');
+  })
+})
+
+
+// Выявляем URL страницы
+const linkHeader = document.querySelectorAll('.menu__item-link');
+linkHeader.forEach(el => {
+  if(window.location.pathname == `/${el.getAttribute('href')}`) {
+    document.querySelectorAll('.menu__item-link').forEach(el => {
+      el.classList.remove('menu__item-link--active')
+    })
+    el.classList.add('menu__item-link--active')
+  }
+})
