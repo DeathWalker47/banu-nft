@@ -90,3 +90,10 @@ body.hidden {
   padding: 0;
   cursor: pointer;
 }
+
+.img-border {
+  border: 2px solid #363636;
+  &--accent {
+    border-color: $accent;
+  }
+}
