@@ -21,6 +21,7 @@
   padding: 16px 15px;
   background-color: $main-bg;
   border-radius: 8px;
+  // width: 300px;
   &__top {
     position: relative;
     margin-bottom: 16px;
@@ -248,7 +249,7 @@
   &__bid {
     position: relative;
     display: block;
-    width: 100%;
+    // width: 100%;
     text-align: center;
     color: $white;
     // background-color: $dark;

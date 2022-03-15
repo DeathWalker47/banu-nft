@@ -34,6 +34,16 @@ new Swiper(".questions-slider", {
   },
 });
 
+new Swiper(".explore-more__slider", {
+  spaceBetween: 30,
+  speed: 800,
+  slidesPerView: 4,
+  navigation: {
+    nextEl: ".explore-more-next",
+    prevEl: ".explore-more-prev",
+  },
+});
+
 // Filter MisitUp
 
 if (document.querySelector(".explore__cards")) {
