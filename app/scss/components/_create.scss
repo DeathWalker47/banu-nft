@@ -1,0 +1,13 @@
+.create {
+  padding: 120px 0 120px;
+  &__inner {
+    @include flex
+  }
+  &__author {
+    margin-right: 60px;
+    width: 300px;
+  }
+  &__content {
+
+  }
+}

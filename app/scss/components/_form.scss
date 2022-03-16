@@ -1,0 +1,137 @@
+.contact {
+  padding: 120px 0 120px;
+}
+.login {
+  padding: 120px 0 120px;
+  &__top {
+    text-align: center;
+    margin-bottom: 60px;
+    &--create {
+      text-align: left;
+    }
+  }
+}
+.form {
+  max-width: 630px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: $main-bg;
+  border-radius: 10px;
+  padding: 60px 60px;
+  &--create {
+    max-width: 850px;
+    width: 100%;
+    margin: 0;
+  }
+  &__title {
+    @extend %poppins-600;
+    color: $white;
+    font-size: 36px;
+    line-height: 54px;
+    margin-bottom: 20px;
+  }
+  &__text {
+    max-width: 386px;
+    width: 100%;
+    font-size: 18px;
+    line-height: 28px;
+    margin-bottom: 30px;
+  }
+  &__label {
+    position: relative;
+    display: block;
+    margin-bottom: 20px;
+    &:last-child {
+      margin-bottom: 30px;
+    }
+  }
+  &__label-text {
+    @extend %poppins-500;
+    display: inline-block;
+    text-transform: capitalize;
+    color: $white;
+    font-size: 16px;
+    line-height: 21px;
+    letter-spacing: -0.025em;
+    margin-bottom: 10px;
+  }
+  &__input {
+    width: 100%;
+    color: $white;
+    background-color: transparent;
+    border: 1px solid #555555;
+    border-radius: 6px;
+    padding: 10px 10px;
+  }
+  &__upload {
+    position: relative;
+    border: 1px solid #555555;
+    border-radius: 6px;
+    padding: 42px 40px;
+  }
+  &__upload-text {
+    color: $default;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  &__upload-check {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 60px;
+    padding: 10px 30px;
+    color: $white;
+    border: 2px solid $default;
+    border-radius: 50px;
+    font-size: 14px;
+    line-height: 20px;
+    @extend %poppins-500;
+    cursor: pointer;
+  }
+  &__textarea {
+    height: 100px;
+    resize: none;
+    &--create {
+      height: 150px;
+    }
+  }
+  &__input-box {
+    display: flex;
+    flex-wrap: wrap;
+    .form__label {
+      max-width: 350px;
+      width: 100%;
+      &:nth-child(2n +1) {
+        margin-right: 30px;
+      }
+    }
+  }
+  &__btn {
+    border: none;
+    background-color: $accent;
+    color: $white;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 15px 64px;
+    border-radius: 50px;
+    transition: all .2s ease-in;
+    cursor: pointer;
+    &:hover {
+      background-color: $accent-hover;
+    }
+  }
+  &__links {
+    font-size: 18px;
+    line-height: 28px;
+    margin-top: 40px;
+  }
+  &__link {
+    display: inline-block;
+    color: $accent;
+    transition: color .2s ease-in;
+    margin-left: 20px;
+    &:hover {
+      color: $accent-hover;
+    }
+  }
+}
