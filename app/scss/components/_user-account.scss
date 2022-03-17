@@ -1,0 +1,65 @@
+.author-account {
+  width: 300px;
+  border-radius: 10px;
+  text-align: center;
+  background-color: $main-bg;
+  padding: 40px 40px 60px;
+  &__img-link {
+    display: inline-block;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+  }
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  &__name {
+    @extend %poppins-500;
+    font-size: 20px;
+    line-height: 32px;
+    color: $white;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+  }
+  &__site {
+    display: block;
+    font-size: 16px;
+    line-height: 32px;
+    color: $white;
+    text-decoration-line: underline;
+    text-transform: capitalize;
+    transition:  color .2s ease-in;
+    margin-bottom: 21px;
+
+    &:hover {
+      color: $accent;
+    }
+  }
+  &__social {
+    justify-content: center;
+    margin-bottom: 20px!important;
+    .social__link {
+      width: 27px;
+      height: 27px;
+    }
+  }
+  &__follow {
+    background-color: transparent;
+    color: $white;
+    border-radius: 50px;
+    @extend %poppins-500;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 8px 25px;
+    border: 1px solid $default;
+    cursor: pointer;
+    transition: color .2s ease-in;
+    &:hover {
+      color: $default;
+    }
+  }
+}

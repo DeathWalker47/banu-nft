@@ -1,5 +1,5 @@
 .questions {
-  padding: 120px 0 120px;
+  padding: $padding;
   &__top {
     margin-bottom: 60px;
   }
@@ -9,7 +9,6 @@
 }
 
 .questions-slider {
-
   &__item {
     box-sizing: border-box;
     max-width: 410px;

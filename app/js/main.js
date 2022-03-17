@@ -105,3 +105,6 @@ function onTabClick(el) {
 tabsBtn.forEach(onTabClick);
 
 document.querySelector(".tabs__nav-btn").click();
+
+
+// Сделать клик по кнопке author-account__follow, чтоб менялся цвет и надпись о подписке

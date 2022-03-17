@@ -1,5 +1,5 @@
 .creators {
-  padding: 120px 0 120px;
+  padding: $padding;
   background-color: $black;
   &__top {
     margin-bottom: 60px;
@@ -38,10 +38,10 @@
 
     &::before {
       position: absolute;
-      content: '';
+      content: "";
       right: 0;
       bottom: 0;
-      background-image: url('../images/icons/chek.svg');
+      background-image: url("../images/icons/chek.svg");
       width: 20px;
       height: 20px;
     }
@@ -51,7 +51,7 @@
     margin-bottom: 5px;
   }
   &__item-link {
-    transition: color .3s ease-in-out;
+    transition: color 0.3s ease-in-out;
 
     &:hover {
       color: $accent;
@@ -82,7 +82,7 @@
 
     &::before {
       position: absolute;
-      content: '';
+      content: "";
       bottom: 3px;
       left: 0;
       width: 100%;
@@ -91,4 +91,3 @@
     }
   }
 }
-

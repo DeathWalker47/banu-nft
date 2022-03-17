@@ -28,6 +28,7 @@
 //Маленькие компоненты
 @import "components/cards";
 @import "components/swiper-btn";
+@import "components/user-account";
 
 // Компоненты страницы item-detals
 @import "components/item-detals";
@@ -40,7 +41,11 @@
 
 // Компоненты страницы login
 @import "components/form";
+
 // Компоненты страницы create
 @import "components/create";
+
+// Компоненты страницы profile
+@import "components/profile";
 
 @import "media";

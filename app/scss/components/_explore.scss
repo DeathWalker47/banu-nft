@@ -1,6 +1,6 @@
 .explore {
   background-color: $dark;
-  padding: 120px 0 120px;
+  padding: $padding;
   &__inner {
     display: flex;
     justify-content: space-between;
@@ -23,7 +23,7 @@
     line-height: 20px;
     text-transform: capitalize;
     padding: 8px 18px;
-    transition: color .2s ease-in;
+    transition: color 0.2s ease-in;
 
     &:not(:last-child) {
       margin-right: 11px;

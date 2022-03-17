@@ -1,5 +1,5 @@
 .blog {
-  padding: 120px 0 120px;
+  padding: $padding;
 }
 
 .blog-list {
@@ -24,7 +24,7 @@
     overflow: hidden;
     &::before {
       position: absolute;
-      content: '';
+      content: "";
       top: 0;
       left: 0;
       width: 100%;
@@ -48,7 +48,7 @@
   &__date {
     padding-right: 5px;
   }
- 
+
   &__title {
     position: relative;
 
@@ -56,14 +56,14 @@
     overflow: hidden;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
-    
+
     @extend %poppins-600;
     max-width: 245px;
     font-size: 20px;
     line-height: 28px;
     color: $white;
     z-index: 5;
-    transition: color .2s ease-in;
+    transition: color 0.2s ease-in;
 
     &:hover {
       color: $accent;

@@ -95,19 +95,19 @@
     </div>
   </div>
 </section>
-      <section class="create">
+      <section class="profile">
   <div class="container">
-    <div class="create__inner">
-      <div class="create__author">
+    <div class="profile__inner">
+      <div class="profile__author">
         <div class="author-account">
           <a href="#" class="author-account__img-link img-border img-border--accent">
-            <img src="./images/humans/create.jpg" alt="author" class="author-account__img">
+            <img src="./images/humans/author-img.jpg" alt="author" class="author-account__img">
           </a>
           <h3 class="author-account__name">
-            Einstein Bariya
+            Mike Vazovsky
           </h3>
           <a href="#" class="author-account__site">
-            Einstein-Bariya011.com
+            Mike-Vazovsky.com
           </a>
           <ul class="social author-account__social">
             <li class="social__item">
@@ -181,68 +181,248 @@
           </button>
         </div>
       </div>
-      <div class="create__content">
-        <div class="heading login__top login__top--create">
-          <span class="heading__subtitle">Create</span>
-          <h2 class="heading__title title">Create Item</h2>
+      <div class="profile-tabls">
+        <div class="profile-tabls__nav">
+          <button class="profile-tabls__btn explore-filter__btn btn-reset">
+            On sale
+          </button>
+          <button class="profile-tabls__btn explore-filter__btn btn-reset">
+            Ownde
+          </button>
+          <button class="profile-tabls__btn explore-filter__btn btn-reset">
+            Created
+          </button>
+          <button class="profile-tabls__btn explore-filter__btn btn-reset">
+            Liked
+          </button>
         </div>
-        <form action="#" class="form form--create">
-          <label class="form__label">
-            <span class="form__label-text">
-              Upload file *
-            </span>
-            <div class="form__upload">
-              <p class="form__upload-text">
-                PNG, JPG, GIF, WEBP OR MP4. MAX 200MB.
-              </p>
-              <div class="form__upload-file">
-                <input type="file" class="form__input-file visually-hidden">
-                <span class="form__upload-check" role="button">
-                  Upload File
-                </span>
-              </div>
-            </div>
-          </label>
-          <label class="form__label">
-            <span class="form__label-text">
-              Item Name *
-            </span>
-            <input type="text" class="form__input">
-          </label>
-          <label class="form__label">
-            <span class="form__label-text">
-              Description *
-            </span>
-            <textarea class="form__input form__textarea form__textarea--create"></textarea>
-          </label>
-          <div class="form__input-box">
-            <label class="form__label">
-              <span class="form__label-text">
-                Item Price *
-              </span>
-              <input type="text" class="form__input">
-            </label>
-            <label class="form__label">
-              <span class="form__label-text">
-                Royality *
-              </span>
-              <input type="text" class="form__input">
-            </label>
-            <label class="form__label">
-              <span class="form__label-text">
-                Size *
-              </span>
-              <input type="text" class="form__input">
-            </label>
-            <label class="form__label">
-              <span class="form__label-text">
-                No of Copies *
-              </span>
-              <input type="text" class="form__input">
-            </label>
-          </div>
-          <button class="form__btn" type="submit">Create Item</button>
-        </form>
+        <div class="profile-tabls__content">
+          <ul class="cards auctions-items profile-tabls__content-items">
+            <li class="cards__item">
+              <article class="card-item">
+                <div class="card-item__top">
+                  <a class="card-item__link" href="#">
+                    <img src="./images/auctions/auction-9.jpg" alt="img" class="card-item__img">
+                  </a>
+                  <div class="card-item__time">
+                    <span class="card-item__hour">03</span> :
+                    <span class="card-item__minutes">18</span> :
+                    <span class="card-item__second">24</span>
+                  </div>
+                </div>
+                <div class="card-item__content card-item__content--auctions">
+                  <div class="card-item__content-top">
+                    <h2 class="card-item__content-title card-item__owned">
+                        <a href="" class="card-item__owned-img img-border img-border--accent">
+                          <img src="./images/humans/avatar-details-5.jpg" alt="author">
+                        </a>
+                        <a href="#" class="card-item__owned-link">Masniya hug</a>
+                    </h2>
+                  </div>
+                </div>
+                <a href="#" class="card-item__bid btn-fill card-item__price">
+                <p class="card-item__owned-eth">
+                  5.4 ETH
+                </p>
+                <div class="card-item__like">
+                  <button class="card-item__like-btn">
+                    <svg class="card-item__like-img" width="21" height="20" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M14.2397 0.969522C12.5665 -0.458478 10.103 -0.185089 8.55153 1.39477L7.97337 2.00241L7.36504 1.39477C5.84372 -0.185089 3.35004 -0.458478 1.67688 0.969522C-0.239613 2.61005 -0.330144 5.52672 1.37319 7.28897L7.27355 13.3654C7.63855 13.7603 8.27706 13.7603 8.64303 13.3654L14.5434 7.28897C16.2467 5.52672 16.1552 2.61005 14.2397 0.969522Z" stroke="#a1a1a1"></path>
+                      </svg>
+                  </button>
+                  <span class="card-item__like-num">92</span>
+                </div>
+              </a>
+              </article>
+            </li>
+            <li class="cards__item">
+              <article class="card-item">
+                <div class="card-item__top">
+                  <a class="card-item__link" href="#">
+                    <img src="./images/auctions/auction-10.jpg" alt="img" class="card-item__img">
+                  </a>
+                  <div class="card-item__time">
+                    <span class="card-item__hour">03</span> :
+                    <span class="card-item__minutes">18</span> :
+                    <span class="card-item__second">24</span>
+                  </div>
+                </div>
+                <div class="card-item__content card-item__content--auctions">
+                  <div class="card-item__content-top">
+                    <h2 class="card-item__content-title card-item__owned">
+                        <a href="" class="card-item__owned-img img-border img-border--accent">
+                          <img src="./images/humans/avatar-details-6.jpg" alt="author">
+                        </a>
+                        <a href="#" class="card-item__owned-link">Nina Queen</a>
+                    </h2>
+                  </div>
+                </div>
+                <a href="#" class="card-item__bid btn-fill card-item__price">
+                <p class="card-item__owned-eth">
+                  5.4 ETH
+                </p>
+                <div class="card-item__like">
+                  <button class="card-item__like-btn">
+                    <svg class="card-item__like-img" width="21" height="20" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M14.2397 0.969522C12.5665 -0.458478 10.103 -0.185089 8.55153 1.39477L7.97337 2.00241L7.36504 1.39477C5.84372 -0.185089 3.35004 -0.458478 1.67688 0.969522C-0.239613 2.61005 -0.330144 5.52672 1.37319 7.28897L7.27355 13.3654C7.63855 13.7603 8.27706 13.7603 8.64303 13.3654L14.5434 7.28897C16.2467 5.52672 16.1552 2.61005 14.2397 0.969522Z" stroke="#a1a1a1"></path>
+                      </svg>
+                  </button>
+                  <span class="card-item__like-num">92</span>
+                </div>
+              </a>
+              </article>
+            </li>
+            <li class="cards__item">
+              <article class="card-item">
+                <div class="card-item__top">
+                  <a class="card-item__link" href="#">
+                    <img src="./images/auctions/auction-11.jpg" alt="img" class="card-item__img">
+                  </a>
+                  <div class="card-item__time">
+                    <span class="card-item__hour">03</span> :
+                    <span class="card-item__minutes">18</span> :
+                    <span class="card-item__second">24</span>
+                  </div>
+                </div>
+                <div class="card-item__content card-item__content--auctions">
+                  <div class="card-item__content-top">
+                    <h2 class="card-item__content-title card-item__owned">
+                        <a href="" class="card-item__owned-img img-border img-border--accent">
+                          <img src="./images/humans/avatar-details-7.jpg" alt="author">
+                        </a>
+                        <a href="#" class="card-item__owned-link">Liza Nickols</a>
+                    </h2>
+                  </div>
+                </div>
+                <a href="#" class="card-item__bid btn-fill card-item__price">
+                <p class="card-item__owned-eth">
+                  5.4 ETH
+                </p>
+                <div class="card-item__like">
+                  <button class="card-item__like-btn">
+                    <svg class="card-item__like-img" width="21" height="20" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M14.2397 0.969522C12.5665 -0.458478 10.103 -0.185089 8.55153 1.39477L7.97337 2.00241L7.36504 1.39477C5.84372 -0.185089 3.35004 -0.458478 1.67688 0.969522C-0.239613 2.61005 -0.330144 5.52672 1.37319 7.28897L7.27355 13.3654C7.63855 13.7603 8.27706 13.7603 8.64303 13.3654L14.5434 7.28897C16.2467 5.52672 16.1552 2.61005 14.2397 0.969522Z" stroke="#a1a1a1"></path>
+                      </svg>
+                  </button>
+                  <span class="card-item__like-num">92</span>
+                </div>
+              </a>
+              </article>
+            </li>
+            <li class="cards__item">
+              <article class="card-item">
+                <div class="card-item__top">
+                  <a class="card-item__link" href="#">
+                    <img src="./images/auctions/auction-12.jpg" alt="img" class="card-item__img">
+                  </a>
+                  <div class="card-item__time">
+                    <span class="card-item__hour">03</span> :
+                    <span class="card-item__minutes">18</span> :
+                    <span class="card-item__second">24</span>
+                  </div>
+                </div>
+                <div class="card-item__content card-item__content--auctions">
+                  <div class="card-item__content-top">
+                    <h2 class="card-item__content-title card-item__owned">
+                        <a href="" class="card-item__owned-img img-border img-border--accent">
+                          <img src="./images/humans/avatar-details-8.jpg" alt="author">
+                        </a>
+                        <a href="#" class="card-item__owned-link">Jack Black</a>
+                    </h2>
+                  </div>
+                </div>
+                <a href="#" class="card-item__bid btn-fill card-item__price">
+                <p class="card-item__owned-eth">
+                  5.4 ETH
+                </p>
+                <div class="card-item__like">
+                  <button class="card-item__like-btn">
+                    <svg class="card-item__like-img" width="21" height="20" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M14.2397 0.969522C12.5665 -0.458478 10.103 -0.185089 8.55153 1.39477L7.97337 2.00241L7.36504 1.39477C5.84372 -0.185089 3.35004 -0.458478 1.67688 0.969522C-0.239613 2.61005 -0.330144 5.52672 1.37319 7.28897L7.27355 13.3654C7.63855 13.7603 8.27706 13.7603 8.64303 13.3654L14.5434 7.28897C16.2467 5.52672 16.1552 2.61005 14.2397 0.969522Z" stroke="#a1a1a1"></path>
+                      </svg>
+                  </button>
+                  <span class="card-item__like-num">92</span>
+                </div>
+              </a>
+              </article>
+            </li>
+            <li class="cards__item">
+              <article class="card-item">
+                <div class="card-item__top">
+                  <a class="card-item__link" href="#">
+                    <img src="./images/auctions/auction-13.jpg" alt="img" class="card-item__img">
+                  </a>
+                  <div class="card-item__time">
+                    <span class="card-item__hour">03</span> :
+                    <span class="card-item__minutes">18</span> :
+                    <span class="card-item__second">24</span>
+                  </div>
+                </div>
+                <div class="card-item__content card-item__content--auctions">
+                  <div class="card-item__content-top">
+                    <h2 class="card-item__content-title card-item__owned">
+                        <a href="" class="card-item__owned-img img-border img-border--accent">
+                          <img src="./images/humans/avatar-details-9.jpg" alt="author">
+                        </a>
+                        <a href="#" class="card-item__owned-link">Travis White</a>
+                    </h2>
+                  </div>
+                </div>
+                <a href="#" class="card-item__bid btn-fill card-item__price">
+                <p class="card-item__owned-eth">
+                  5.4 ETH
+                </p>
+                <div class="card-item__like">
+                  <button class="card-item__like-btn">
+                    <svg class="card-item__like-img" width="21" height="20" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M14.2397 0.969522C12.5665 -0.458478 10.103 -0.185089 8.55153 1.39477L7.97337 2.00241L7.36504 1.39477C5.84372 -0.185089 3.35004 -0.458478 1.67688 0.969522C-0.239613 2.61005 -0.330144 5.52672 1.37319 7.28897L7.27355 13.3654C7.63855 13.7603 8.27706 13.7603 8.64303 13.3654L14.5434 7.28897C16.2467 5.52672 16.1552 2.61005 14.2397 0.969522Z" stroke="#a1a1a1"></path>
+                      </svg>
+                  </button>
+                  <span class="card-item__like-num">92</span>
+                </div>
+              </a>
+              </article>
+            </li>
+            <li class="cards__item">
+              <article class="card-item">
+                <div class="card-item__top">
+                  <a class="card-item__link" href="#">
+                    <img src="./images/auctions/auction-14.jpg" alt="img" class="card-item__img">
+                  </a>
+                  <div class="card-item__time">
+                    <span class="card-item__hour">03</span> :
+                    <span class="card-item__minutes">18</span> :
+                    <span class="card-item__second">24</span>
+                  </div>
+                </div>
+                <div class="card-item__content card-item__content--auctions">
+                  <div class="card-item__content-top">
+                    <h2 class="card-item__content-title card-item__owned">
+                        <a href="" class="card-item__owned-img img-border img-border--accent">
+                          <img src="./images/humans/avatar-details-10.jpg" alt="author">
+                        </a>
+                        <a href="#" class="card-item__owned-link">Jorno Brawn</a>
+                    </h2>
+                  </div>
+                </div>
+                <a href="#" class="card-item__bid btn-fill card-item__price">
+                <p class="card-item__owned-eth">
+                  5.4 ETH
+                </p>
+                <div class="card-item__like">
+                  <button class="card-item__like-btn">
+                    <svg class="card-item__like-img" width="21" height="20" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M14.2397 0.969522C12.5665 -0.458478 10.103 -0.185089 8.55153 1.39477L7.97337 2.00241L7.36504 1.39477C5.84372 -0.185089 3.35004 -0.458478 1.67688 0.969522C-0.239613 2.61005 -0.330144 5.52672 1.37319 7.28897L7.27355 13.3654C7.63855 13.7603 8.27706 13.7603 8.64303 13.3654L14.5434 7.28897C16.2467 5.52672 16.1552 2.61005 14.2397 0.969522Z" stroke="#a1a1a1"></path>
+                      </svg>
+                  </button>
+                  <span class="card-item__like-num">92</span>
+                </div>
+              </a>
+              </article>
+            </li>
+            
+          </ul>
+        </div>
       </div>
     </div>
   </div>
