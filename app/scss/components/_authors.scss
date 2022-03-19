@@ -1,0 +1,72 @@
+.authors {
+  padding: $padding;
+  &__content {
+    text-align: center;
+    margin-bottom: 80px;
+  }
+  &__sellers-title {
+    @extend %gilroy-800;
+    color: $white;
+    font-size: 40px;
+    line-height: 49px;
+    margin-bottom: 60px;  
+  }
+}
+
+.authors-list {
+  margin-bottom: 60px!important;
+  &__item {
+    grid-column: 3 span;
+  }
+}
+
+.author-link {
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: $main-bg;
+  padding: 15px 15px 30px;
+  text-align: center;
+  &__img {
+    display: block;
+    width: 270px;
+    height: 185px;
+    border-radius: 10px;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &__user {
+    display: block;
+    width: 74px;
+    height: 74px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 10px;
+    margin-top: -40px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &__name {
+    color: $white;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+    @extend %poppins-500;
+    font-size: 20px;
+    line-height: 32px;
+    transition: color .2s ease-in-out;
+
+    &:hover {
+      color: $accent;
+    }
+  }
+
+}
+
+
+

@@ -1,9 +1,6 @@
 .creators {
   padding: $padding;
   background-color: $black;
-  &__top {
-    margin-bottom: 60px;
-  }
   &__container {
     position: relative;
   }
@@ -69,6 +66,9 @@
 }
 
 .heading {
+  &--top {
+    margin-bottom: 60px;
+  }
   &__subtitle {
     position: relative;
     display: inline-block;

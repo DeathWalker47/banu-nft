@@ -86,245 +86,332 @@
       </div>
       <div class="profile-tabls">
         <div class="profile-tabls__nav">
-          <button class="profile-tabls__btn explore-filter__btn btn-reset">
+          <button class="profile-tabls__btn explore-filter__btn btn-reset tab-btn tab-btn--active" data-tab="#tab-4">
             On sale
           </button>
-          <button class="profile-tabls__btn explore-filter__btn btn-reset">
+          <button class="profile-tabls__btn explore-filter__btn btn-reset tab-btn" data-tab="#tab-5">
             Ownde
           </button>
-          <button class="profile-tabls__btn explore-filter__btn btn-reset">
+          <button class="profile-tabls__btn explore-filter__btn btn-reset tab-btn" data-tab="#tab-6">
             Created
           </button>
-          <button class="profile-tabls__btn explore-filter__btn btn-reset">
+          <button class="profile-tabls__btn explore-filter__btn btn-reset tab-btn" data-tab="#tab-7">
             Liked
           </button>
         </div>
-        <div class="profile-tabls__content">
-          <ul class="cards auctions-items profile-tabls__content-items">
-            <li class="cards__item">
-              <article class="card-item">
-                <div class="card-item__top">
-                  <a class="card-item__link" href="#">
-                    <img src="./images/auctions/auction-9.jpg" alt="img" class="card-item__img">
-                  </a>
-                  <div class="card-item__time">
-                    <span class="card-item__hour">03</span> :
-                    <span class="card-item__minutes">18</span> :
-                    <span class="card-item__second">24</span>
+        <div class="profile-tabls__content tabs-content">
+          <div class="tab-item tab-item--active" id="tab-4">
+            <ul class="cards auctions-items profile-tabls__content-items">
+              <li class="cards__item">
+                <article class="card-item">
+                  <div class="card-item__top">
+                    <a class="card-item__link" href="#">
+                      <img src="./images/auctions/auction-9.jpg" alt="img" class="card-item__img">
+                    </a>
+                    <div class="card-item__time">
+                      <span class="card-item__hour">03</span> :
+                      <span class="card-item__minutes">18</span> :
+                      <span class="card-item__second">24</span>
+                    </div>
                   </div>
-                </div>
-                <div class="card-item__content card-item__content--auctions">
-                  <div class="card-item__content-top">
-                    <h2 class="card-item__content-title card-item__owned">
-                        <a href="" class="card-item__owned-img img-border img-border--accent">
-                          <img src="./images/humans/avatar-details-5.jpg" alt="author">
-                        </a>
-                        <a href="#" class="card-item__owned-link">Masniya hug</a>
-                    </h2>
+                  <div class="card-item__content card-item__content--auctions">
+                    <div class="card-item__content-top">
+                      <h2 class="card-item__content-title card-item__owned">
+                          <a href="" class="card-item__owned-img img-border img-border--accent">
+                            <img src="./images/humans/avatar-details-5.jpg" alt="author">
+                          </a>
+                          <a href="#" class="card-item__owned-link">Masniya hug</a>
+                      </h2>
+                    </div>
                   </div>
-                </div>
-                <a href="#" class="card-item__bid btn-fill card-item__price">
-                <p class="card-item__owned-eth">
-                  5.4 ETH
-                </p>
-                <div class="card-item__like">
-                  <button class="card-item__like-btn">
-                    <svg class="card-item__like-img" width="21" height="20" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M14.2397 0.969522C12.5665 -0.458478 10.103 -0.185089 8.55153 1.39477L7.97337 2.00241L7.36504 1.39477C5.84372 -0.185089 3.35004 -0.458478 1.67688 0.969522C-0.239613 2.61005 -0.330144 5.52672 1.37319 7.28897L7.27355 13.3654C7.63855 13.7603 8.27706 13.7603 8.64303 13.3654L14.5434 7.28897C16.2467 5.52672 16.1552 2.61005 14.2397 0.969522Z" stroke="#a1a1a1"></path>
-                      </svg>
-                  </button>
-                  <span class="card-item__like-num">92</span>
-                </div>
-              </a>
-              </article>
-            </li>
-            <li class="cards__item">
-              <article class="card-item">
-                <div class="card-item__top">
-                  <a class="card-item__link" href="#">
-                    <img src="./images/auctions/auction-10.jpg" alt="img" class="card-item__img">
-                  </a>
-                  <div class="card-item__time">
-                    <span class="card-item__hour">03</span> :
-                    <span class="card-item__minutes">18</span> :
-                    <span class="card-item__second">24</span>
+                  <a href="#" class="card-item__bid btn-fill card-item__price">
+                  <p class="card-item__owned-eth">
+                    5.4 ETH
+                  </p>
+                  <div class="card-item__like">
+                    <button class="card-item__like-btn">
+                      <svg class="card-item__like-img" width="21" height="20" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.2397 0.969522C12.5665 -0.458478 10.103 -0.185089 8.55153 1.39477L7.97337 2.00241L7.36504 1.39477C5.84372 -0.185089 3.35004 -0.458478 1.67688 0.969522C-0.239613 2.61005 -0.330144 5.52672 1.37319 7.28897L7.27355 13.3654C7.63855 13.7603 8.27706 13.7603 8.64303 13.3654L14.5434 7.28897C16.2467 5.52672 16.1552 2.61005 14.2397 0.969522Z" stroke="#a1a1a1"></path>
+                        </svg>
+                    </button>
+                    <span class="card-item__like-num">92</span>
                   </div>
-                </div>
-                <div class="card-item__content card-item__content--auctions">
-                  <div class="card-item__content-top">
-                    <h2 class="card-item__content-title card-item__owned">
-                        <a href="" class="card-item__owned-img img-border img-border--accent">
-                          <img src="./images/humans/avatar-details-6.jpg" alt="author">
-                        </a>
-                        <a href="#" class="card-item__owned-link">Nina Queen</a>
-                    </h2>
+                </a>
+                </article>
+              </li>
+              <li class="cards__item">
+                <article class="card-item">
+                  <div class="card-item__top">
+                    <a class="card-item__link" href="#">
+                      <img src="./images/auctions/auction-10.jpg" alt="img" class="card-item__img">
+                    </a>
+                    <div class="card-item__time">
+                      <span class="card-item__hour">03</span> :
+                      <span class="card-item__minutes">18</span> :
+                      <span class="card-item__second">24</span>
+                    </div>
                   </div>
-                </div>
-                <a href="#" class="card-item__bid btn-fill card-item__price">
-                <p class="card-item__owned-eth">
-                  5.4 ETH
-                </p>
-                <div class="card-item__like">
-                  <button class="card-item__like-btn">
-                    <svg class="card-item__like-img" width="21" height="20" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M14.2397 0.969522C12.5665 -0.458478 10.103 -0.185089 8.55153 1.39477L7.97337 2.00241L7.36504 1.39477C5.84372 -0.185089 3.35004 -0.458478 1.67688 0.969522C-0.239613 2.61005 -0.330144 5.52672 1.37319 7.28897L7.27355 13.3654C7.63855 13.7603 8.27706 13.7603 8.64303 13.3654L14.5434 7.28897C16.2467 5.52672 16.1552 2.61005 14.2397 0.969522Z" stroke="#a1a1a1"></path>
-                      </svg>
-                  </button>
-                  <span class="card-item__like-num">92</span>
-                </div>
-              </a>
-              </article>
-            </li>
-            <li class="cards__item">
-              <article class="card-item">
-                <div class="card-item__top">
-                  <a class="card-item__link" href="#">
-                    <img src="./images/auctions/auction-11.jpg" alt="img" class="card-item__img">
-                  </a>
-                  <div class="card-item__time">
-                    <span class="card-item__hour">03</span> :
-                    <span class="card-item__minutes">18</span> :
-                    <span class="card-item__second">24</span>
+                  <div class="card-item__content card-item__content--auctions">
+                    <div class="card-item__content-top">
+                      <h2 class="card-item__content-title card-item__owned">
+                          <a href="" class="card-item__owned-img img-border img-border--accent">
+                            <img src="./images/humans/avatar-details-6.jpg" alt="author">
+                          </a>
+                          <a href="#" class="card-item__owned-link">Nina Queen</a>
+                      </h2>
+                    </div>
                   </div>
-                </div>
-                <div class="card-item__content card-item__content--auctions">
-                  <div class="card-item__content-top">
-                    <h2 class="card-item__content-title card-item__owned">
-                        <a href="" class="card-item__owned-img img-border img-border--accent">
-                          <img src="./images/humans/avatar-details-7.jpg" alt="author">
-                        </a>
-                        <a href="#" class="card-item__owned-link">Liza Nickols</a>
-                    </h2>
+                  <a href="#" class="card-item__bid btn-fill card-item__price">
+                  <p class="card-item__owned-eth">
+                    5.4 ETH
+                  </p>
+                  <div class="card-item__like">
+                    <button class="card-item__like-btn">
+                      <svg class="card-item__like-img" width="21" height="20" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.2397 0.969522C12.5665 -0.458478 10.103 -0.185089 8.55153 1.39477L7.97337 2.00241L7.36504 1.39477C5.84372 -0.185089 3.35004 -0.458478 1.67688 0.969522C-0.239613 2.61005 -0.330144 5.52672 1.37319 7.28897L7.27355 13.3654C7.63855 13.7603 8.27706 13.7603 8.64303 13.3654L14.5434 7.28897C16.2467 5.52672 16.1552 2.61005 14.2397 0.969522Z" stroke="#a1a1a1"></path>
+                        </svg>
+                    </button>
+                    <span class="card-item__like-num">92</span>
                   </div>
-                </div>
-                <a href="#" class="card-item__bid btn-fill card-item__price">
-                <p class="card-item__owned-eth">
-                  5.4 ETH
-                </p>
-                <div class="card-item__like">
-                  <button class="card-item__like-btn">
-                    <svg class="card-item__like-img" width="21" height="20" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M14.2397 0.969522C12.5665 -0.458478 10.103 -0.185089 8.55153 1.39477L7.97337 2.00241L7.36504 1.39477C5.84372 -0.185089 3.35004 -0.458478 1.67688 0.969522C-0.239613 2.61005 -0.330144 5.52672 1.37319 7.28897L7.27355 13.3654C7.63855 13.7603 8.27706 13.7603 8.64303 13.3654L14.5434 7.28897C16.2467 5.52672 16.1552 2.61005 14.2397 0.969522Z" stroke="#a1a1a1"></path>
-                      </svg>
-                  </button>
-                  <span class="card-item__like-num">92</span>
-                </div>
-              </a>
-              </article>
-            </li>
-            <li class="cards__item">
-              <article class="card-item">
-                <div class="card-item__top">
-                  <a class="card-item__link" href="#">
-                    <img src="./images/auctions/auction-12.jpg" alt="img" class="card-item__img">
-                  </a>
-                  <div class="card-item__time">
-                    <span class="card-item__hour">03</span> :
-                    <span class="card-item__minutes">18</span> :
-                    <span class="card-item__second">24</span>
+                </a>
+                </article>
+              </li>
+              <li class="cards__item">
+                <article class="card-item">
+                  <div class="card-item__top">
+                    <a class="card-item__link" href="#">
+                      <img src="./images/auctions/auction-12.jpg" alt="img" class="card-item__img">
+                    </a>
+                    <div class="card-item__time">
+                      <span class="card-item__hour">03</span> :
+                      <span class="card-item__minutes">18</span> :
+                      <span class="card-item__second">24</span>
+                    </div>
                   </div>
-                </div>
-                <div class="card-item__content card-item__content--auctions">
-                  <div class="card-item__content-top">
-                    <h2 class="card-item__content-title card-item__owned">
-                        <a href="" class="card-item__owned-img img-border img-border--accent">
-                          <img src="./images/humans/avatar-details-8.jpg" alt="author">
-                        </a>
-                        <a href="#" class="card-item__owned-link">Jack Black</a>
-                    </h2>
+                  <div class="card-item__content card-item__content--auctions">
+                    <div class="card-item__content-top">
+                      <h2 class="card-item__content-title card-item__owned">
+                          <a href="" class="card-item__owned-img img-border img-border--accent">
+                            <img src="./images/humans/avatar-details-8.jpg" alt="author">
+                          </a>
+                          <a href="#" class="card-item__owned-link">Jack Black</a>
+                      </h2>
+                    </div>
                   </div>
-                </div>
-                <a href="#" class="card-item__bid btn-fill card-item__price">
-                <p class="card-item__owned-eth">
-                  5.4 ETH
-                </p>
-                <div class="card-item__like">
-                  <button class="card-item__like-btn">
-                    <svg class="card-item__like-img" width="21" height="20" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M14.2397 0.969522C12.5665 -0.458478 10.103 -0.185089 8.55153 1.39477L7.97337 2.00241L7.36504 1.39477C5.84372 -0.185089 3.35004 -0.458478 1.67688 0.969522C-0.239613 2.61005 -0.330144 5.52672 1.37319 7.28897L7.27355 13.3654C7.63855 13.7603 8.27706 13.7603 8.64303 13.3654L14.5434 7.28897C16.2467 5.52672 16.1552 2.61005 14.2397 0.969522Z" stroke="#a1a1a1"></path>
-                      </svg>
-                  </button>
-                  <span class="card-item__like-num">92</span>
-                </div>
-              </a>
-              </article>
-            </li>
-            <li class="cards__item">
-              <article class="card-item">
-                <div class="card-item__top">
-                  <a class="card-item__link" href="#">
-                    <img src="./images/auctions/auction-13.jpg" alt="img" class="card-item__img">
-                  </a>
-                  <div class="card-item__time">
-                    <span class="card-item__hour">03</span> :
-                    <span class="card-item__minutes">18</span> :
-                    <span class="card-item__second">24</span>
+                  <a href="#" class="card-item__bid btn-fill card-item__price">
+                  <p class="card-item__owned-eth">
+                    5.4 ETH
+                  </p>
+                  <div class="card-item__like">
+                    <button class="card-item__like-btn">
+                      <svg class="card-item__like-img" width="21" height="20" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.2397 0.969522C12.5665 -0.458478 10.103 -0.185089 8.55153 1.39477L7.97337 2.00241L7.36504 1.39477C5.84372 -0.185089 3.35004 -0.458478 1.67688 0.969522C-0.239613 2.61005 -0.330144 5.52672 1.37319 7.28897L7.27355 13.3654C7.63855 13.7603 8.27706 13.7603 8.64303 13.3654L14.5434 7.28897C16.2467 5.52672 16.1552 2.61005 14.2397 0.969522Z" stroke="#a1a1a1"></path>
+                        </svg>
+                    </button>
+                    <span class="card-item__like-num">92</span>
                   </div>
-                </div>
-                <div class="card-item__content card-item__content--auctions">
-                  <div class="card-item__content-top">
-                    <h2 class="card-item__content-title card-item__owned">
-                        <a href="" class="card-item__owned-img img-border img-border--accent">
-                          <img src="./images/humans/avatar-details-9.jpg" alt="author">
-                        </a>
-                        <a href="#" class="card-item__owned-link">Travis White</a>
-                    </h2>
+                </a>
+                </article>
+              </li>
+            </ul>
+          </div>
+          <div class="tab-item"  id="tab-5">
+            <ul class="cards auctions-items profile-tabls__content-items ">
+              <li class="cards__item">
+                <article class="card-item">
+                  <div class="card-item__top">
+                    <a class="card-item__link" href="#">
+                      <img src="./images/auctions/auction-11.jpg" alt="img" class="card-item__img">
+                    </a>
+                    <div class="card-item__time">
+                      <span class="card-item__hour">03</span> :
+                      <span class="card-item__minutes">18</span> :
+                      <span class="card-item__second">24</span>
+                    </div>
                   </div>
-                </div>
-                <a href="#" class="card-item__bid btn-fill card-item__price">
-                <p class="card-item__owned-eth">
-                  5.4 ETH
-                </p>
-                <div class="card-item__like">
-                  <button class="card-item__like-btn">
-                    <svg class="card-item__like-img" width="21" height="20" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M14.2397 0.969522C12.5665 -0.458478 10.103 -0.185089 8.55153 1.39477L7.97337 2.00241L7.36504 1.39477C5.84372 -0.185089 3.35004 -0.458478 1.67688 0.969522C-0.239613 2.61005 -0.330144 5.52672 1.37319 7.28897L7.27355 13.3654C7.63855 13.7603 8.27706 13.7603 8.64303 13.3654L14.5434 7.28897C16.2467 5.52672 16.1552 2.61005 14.2397 0.969522Z" stroke="#a1a1a1"></path>
-                      </svg>
-                  </button>
-                  <span class="card-item__like-num">92</span>
-                </div>
-              </a>
-              </article>
-            </li>
-            <li class="cards__item">
-              <article class="card-item">
-                <div class="card-item__top">
-                  <a class="card-item__link" href="#">
-                    <img src="./images/auctions/auction-14.jpg" alt="img" class="card-item__img">
-                  </a>
-                  <div class="card-item__time">
-                    <span class="card-item__hour">03</span> :
-                    <span class="card-item__minutes">18</span> :
-                    <span class="card-item__second">24</span>
+                  <div class="card-item__content card-item__content--auctions">
+                    <div class="card-item__content-top">
+                      <h2 class="card-item__content-title card-item__owned">
+                          <a href="" class="card-item__owned-img img-border img-border--accent">
+                            <img src="./images/humans/avatar-details-7.jpg" alt="author">
+                          </a>
+                          <a href="#" class="card-item__owned-link">Liza Nickols</a>
+                      </h2>
+                    </div>
                   </div>
-                </div>
-                <div class="card-item__content card-item__content--auctions">
-                  <div class="card-item__content-top">
-                    <h2 class="card-item__content-title card-item__owned">
-                        <a href="" class="card-item__owned-img img-border img-border--accent">
-                          <img src="./images/humans/avatar-details-10.jpg" alt="author">
-                        </a>
-                        <a href="#" class="card-item__owned-link">Jorno Brawn</a>
-                    </h2>
+                  <a href="#" class="card-item__bid btn-fill card-item__price">
+                  <p class="card-item__owned-eth">
+                    5.4 ETH
+                  </p>
+                  <div class="card-item__like">
+                    <button class="card-item__like-btn">
+                      <svg class="card-item__like-img" width="21" height="20" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.2397 0.969522C12.5665 -0.458478 10.103 -0.185089 8.55153 1.39477L7.97337 2.00241L7.36504 1.39477C5.84372 -0.185089 3.35004 -0.458478 1.67688 0.969522C-0.239613 2.61005 -0.330144 5.52672 1.37319 7.28897L7.27355 13.3654C7.63855 13.7603 8.27706 13.7603 8.64303 13.3654L14.5434 7.28897C16.2467 5.52672 16.1552 2.61005 14.2397 0.969522Z" stroke="#a1a1a1"></path>
+                        </svg>
+                    </button>
+                    <span class="card-item__like-num">92</span>
                   </div>
-                </div>
-                <a href="#" class="card-item__bid btn-fill card-item__price">
-                <p class="card-item__owned-eth">
-                  5.4 ETH
-                </p>
-                <div class="card-item__like">
-                  <button class="card-item__like-btn">
-                    <svg class="card-item__like-img" width="21" height="20" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M14.2397 0.969522C12.5665 -0.458478 10.103 -0.185089 8.55153 1.39477L7.97337 2.00241L7.36504 1.39477C5.84372 -0.185089 3.35004 -0.458478 1.67688 0.969522C-0.239613 2.61005 -0.330144 5.52672 1.37319 7.28897L7.27355 13.3654C7.63855 13.7603 8.27706 13.7603 8.64303 13.3654L14.5434 7.28897C16.2467 5.52672 16.1552 2.61005 14.2397 0.969522Z" stroke="#a1a1a1"></path>
-                      </svg>
-                  </button>
-                  <span class="card-item__like-num">92</span>
-                </div>
-              </a>
-              </article>
-            </li>
-            
-          </ul>
+                </a>
+                </article>
+              </li>
+              <li class="cards__item">
+                <article class="card-item">
+                  <div class="card-item__top">
+                    <a class="card-item__link" href="#">
+                      <img src="./images/auctions/auction-12.jpg" alt="img" class="card-item__img">
+                    </a>
+                    <div class="card-item__time">
+                      <span class="card-item__hour">03</span> :
+                      <span class="card-item__minutes">18</span> :
+                      <span class="card-item__second">24</span>
+                    </div>
+                  </div>
+                  <div class="card-item__content card-item__content--auctions">
+                    <div class="card-item__content-top">
+                      <h2 class="card-item__content-title card-item__owned">
+                          <a href="" class="card-item__owned-img img-border img-border--accent">
+                            <img src="./images/humans/avatar-details-8.jpg" alt="author">
+                          </a>
+                          <a href="#" class="card-item__owned-link">Jack Black</a>
+                      </h2>
+                    </div>
+                  </div>
+                  <a href="#" class="card-item__bid btn-fill card-item__price">
+                  <p class="card-item__owned-eth">
+                    5.4 ETH
+                  </p>
+                  <div class="card-item__like">
+                    <button class="card-item__like-btn">
+                      <svg class="card-item__like-img" width="21" height="20" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.2397 0.969522C12.5665 -0.458478 10.103 -0.185089 8.55153 1.39477L7.97337 2.00241L7.36504 1.39477C5.84372 -0.185089 3.35004 -0.458478 1.67688 0.969522C-0.239613 2.61005 -0.330144 5.52672 1.37319 7.28897L7.27355 13.3654C7.63855 13.7603 8.27706 13.7603 8.64303 13.3654L14.5434 7.28897C16.2467 5.52672 16.1552 2.61005 14.2397 0.969522Z" stroke="#a1a1a1"></path>
+                        </svg>
+                    </button>
+                    <span class="card-item__like-num">92</span>
+                  </div>
+                </a>
+                </article>
+              </li>
+            </ul>
+          </div>
+          <div class="tab-item"  id="tab-6">
+            <ul class="cards auctions-items profile-tabls__content-items">
+              <li class="cards__item">
+                <article class="card-item">
+                  <div class="card-item__top">
+                    <a class="card-item__link" href="#">
+                      <img src="./images/auctions/auction-13.jpg" alt="img" class="card-item__img">
+                    </a>
+                    <div class="card-item__time">
+                      <span class="card-item__hour">03</span> :
+                      <span class="card-item__minutes">18</span> :
+                      <span class="card-item__second">24</span>
+                    </div>
+                  </div>
+                  <div class="card-item__content card-item__content--auctions">
+                    <div class="card-item__content-top">
+                      <h2 class="card-item__content-title card-item__owned">
+                          <a href="" class="card-item__owned-img img-border img-border--accent">
+                            <img src="./images/humans/avatar-details-9.jpg" alt="author">
+                          </a>
+                          <a href="#" class="card-item__owned-link">Travis White</a>
+                      </h2>
+                    </div>
+                  </div>
+                  <a href="#" class="card-item__bid btn-fill card-item__price">
+                  <p class="card-item__owned-eth">
+                    5.4 ETH
+                  </p>
+                  <div class="card-item__like">
+                    <button class="card-item__like-btn">
+                      <svg class="card-item__like-img" width="21" height="20" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.2397 0.969522C12.5665 -0.458478 10.103 -0.185089 8.55153 1.39477L7.97337 2.00241L7.36504 1.39477C5.84372 -0.185089 3.35004 -0.458478 1.67688 0.969522C-0.239613 2.61005 -0.330144 5.52672 1.37319 7.28897L7.27355 13.3654C7.63855 13.7603 8.27706 13.7603 8.64303 13.3654L14.5434 7.28897C16.2467 5.52672 16.1552 2.61005 14.2397 0.969522Z" stroke="#a1a1a1"></path>
+                        </svg>
+                    </button>
+                    <span class="card-item__like-num">92</span>
+                  </div>
+                </a>
+                </article>
+              </li>
+              <li class="cards__item">
+                <article class="card-item">
+                  <div class="card-item__top">
+                    <a class="card-item__link" href="#">
+                      <img src="./images/auctions/auction-14.jpg" alt="img" class="card-item__img">
+                    </a>
+                    <div class="card-item__time">
+                      <span class="card-item__hour">03</span> :
+                      <span class="card-item__minutes">18</span> :
+                      <span class="card-item__second">24</span>
+                    </div>
+                  </div>
+                  <div class="card-item__content card-item__content--auctions">
+                    <div class="card-item__content-top">
+                      <h2 class="card-item__content-title card-item__owned">
+                          <a href="" class="card-item__owned-img img-border img-border--accent">
+                            <img src="./images/humans/avatar-details-10.jpg" alt="author">
+                          </a>
+                          <a href="#" class="card-item__owned-link">Jorno Brawn</a>
+                      </h2>
+                    </div>
+                  </div>
+                  <a href="#" class="card-item__bid btn-fill card-item__price">
+                  <p class="card-item__owned-eth">
+                    5.4 ETH
+                  </p>
+                  <div class="card-item__like">
+                    <button class="card-item__like-btn">
+                      <svg class="card-item__like-img" width="21" height="20" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.2397 0.969522C12.5665 -0.458478 10.103 -0.185089 8.55153 1.39477L7.97337 2.00241L7.36504 1.39477C5.84372 -0.185089 3.35004 -0.458478 1.67688 0.969522C-0.239613 2.61005 -0.330144 5.52672 1.37319 7.28897L7.27355 13.3654C7.63855 13.7603 8.27706 13.7603 8.64303 13.3654L14.5434 7.28897C16.2467 5.52672 16.1552 2.61005 14.2397 0.969522Z" stroke="#a1a1a1"></path>
+                        </svg>
+                    </button>
+                    <span class="card-item__like-num">92</span>
+                  </div>
+                </a>
+                </article>
+              </li>
+            </ul>
+          </div>
+          <div class="tab-item"  id="tab-7">
+            <ul class="cards auctions-items profile-tabls__content-items">
+              <li class="cards__item">
+                <article class="card-item">
+                  <div class="card-item__top">
+                    <a class="card-item__link" href="#">
+                      <img src="./images/auctions/auction-14.jpg" alt="img" class="card-item__img">
+                    </a>
+                    <div class="card-item__time">
+                      <span class="card-item__hour">03</span> :
+                      <span class="card-item__minutes">18</span> :
+                      <span class="card-item__second">24</span>
+                    </div>
+                  </div>
+                  <div class="card-item__content card-item__content--auctions">
+                    <div class="card-item__content-top">
+                      <h2 class="card-item__content-title card-item__owned">
+                          <a href="" class="card-item__owned-img img-border img-border--accent">
+                            <img src="./images/humans/avatar-details-10.jpg" alt="author">
+                          </a>
+                          <a href="#" class="card-item__owned-link">Jorno Brawn</a>
+                      </h2>
+                    </div>
+                  </div>
+                  <a href="#" class="card-item__bid btn-fill card-item__price">
+                  <p class="card-item__owned-eth">
+                    5.4 ETH
+                  </p>
+                  <div class="card-item__like">
+                    <button class="card-item__like-btn">
+                      <svg class="card-item__like-img" width="21" height="20" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.2397 0.969522C12.5665 -0.458478 10.103 -0.185089 8.55153 1.39477L7.97337 2.00241L7.36504 1.39477C5.84372 -0.185089 3.35004 -0.458478 1.67688 0.969522C-0.239613 2.61005 -0.330144 5.52672 1.37319 7.28897L7.27355 13.3654C7.63855 13.7603 8.27706 13.7603 8.64303 13.3654L14.5434 7.28897C16.2467 5.52672 16.1552 2.61005 14.2397 0.969522Z" stroke="#a1a1a1"></path>
+                        </svg>
+                    </button>
+                    <span class="card-item__like-num">92</span>
+                  </div>
+                </a>
+                </article>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

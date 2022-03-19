@@ -8,9 +8,18 @@
   }
 }
 .profile-tabls {
-
+  .explore-filter__btn {
+    transition: none;
+    &:hover {
+      color: $accent;
+      border-color: $accent;
+    }
+  }
   &__nav {
     margin-bottom: 40px;
+  }
+  .tab-btn--active {
+    border-color: $accent;
   }
   &__content-items {
     display: grid;

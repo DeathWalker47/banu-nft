@@ -183,10 +183,6 @@
     line-height: 20px;
     color: $default;
     text-align: left;
-
-    &--active {
-      color: $accent;
-    }
   }
 
   &__content-item {
@@ -195,14 +191,19 @@
     border-radius: 6px;
     background-color: $main-bg;
     padding: 23px 23px;
-    display: none;
-
-    &--active {
-      display: block;
-    }
+    // display: none;
   }
 }
 
+.tab-btn--active {
+  color: $accent;
+}
+.tab-item {
+  display: none;
+  &--active {
+    display: block;
+  }
+}
 .tabs-item {
   @include flex;
   font-size: 16px;

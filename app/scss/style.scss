@@ -30,8 +30,6 @@
 @import "components/swiper-btn";
 @import "components/user-account";
 
-// Компоненты страницы item-detals
-@import "components/item-detals";
 
 // Компоненты страницы blog-page
 @import "components/blog-page";
@@ -47,5 +45,12 @@
 
 // Компоненты страницы profile
 @import "components/profile";
+
+// Компоненты страницы item-detals
+@import "components/item-detals";
+
+// Компоненты страницы authors
+@import "components/authors";
+
 
 @import "media";

@@ -77,34 +77,34 @@ linkHeader.forEach((el) => {
 });
 
 // Простые табы
-const tabsBtn = document.querySelectorAll(".tabs__nav-btn"),
-  tabsItem = document.querySelectorAll(".tabs__content-item"),
-  tabsContent = document.querySelector(".tabs__content");
+const tabsBtn = document.querySelectorAll(".tab-btn"),
+  tabsItem = document.querySelectorAll(".tab-item"),
+  tabsContent = document.querySelectorAll(".tabs-content");
 
 function onTabClick(el) {
   el.addEventListener("click", (e) => {
     let current = e.target;
     let tabsBtnAttr = current.dataset.tab;
 
-    if (!current.classList.contains("tabs__nav-btn--active")) {
+    if (!current.classList.contains("tab-btn--active")) {
       tabsBtn.forEach((item) => {
-        item.classList.remove("tabs__nav-btn--active");
+        item.classList.remove("tab-btn--active");
       });
 
       tabsItem.forEach((item) => {
-        item.classList.remove("tabs__content-item--active");
+        item.classList.remove("tab-item--active");
       });
 
-      current.classList.add("tabs__nav-btn--active");
-      tabsContent
+      current.classList.add("tab-btn--active");
+      document
         .querySelector(`${tabsBtnAttr}`)
-        .classList.add("tabs__content-item--active");
+        .classList.add("tab-item--active");
     }
   });
 }
 tabsBtn.forEach(onTabClick);
 
-document.querySelector(".tabs__nav-btn").click();
+document.querySelector(".tab-btn").click();
 
 
 // Сделать клик по кнопке author-account__follow, чтоб менялся цвет и надпись о подписке
