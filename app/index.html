@@ -29,8 +29,8 @@
             </a>
           </li>
           <li class="menu__item">
-            <a href="wallet.html" class="menu__item-link">
-              Activity
+            <a href="authors.html" class="menu__item-link">
+              Authors
             </a>
           </li>
           <li class="menu__item">
@@ -38,13 +38,33 @@
               Blog
             </a>
           </li>
-          <li class="menu__item">
+          <li class="menu__item menu__item--dropdown">
             <a href="#" class="menu__item-link">
               Pages
+              <svg class="menu__item-arrow">
+              <use xlink:href="./images/sprite.svg#menu-arrow-down"></use>
+              </svg>
             </a>
+            <ul class="dropdown-menu">
+              <li class="dropdown-menu__item">
+                <a href="login.html" class="dropdown-menu__link menu__item-link">
+                  Login
+              </a>
+              </li>
+              <li class="dropdown-menu__item">
+                <a href="create.html" class="dropdown-menu__link menu__item-link">
+                  Create
+              </a>
+              </li>
+              <li class="dropdown-menu__item">
+                <a href="item-detals.html" class="dropdown-menu__link menu__item-link">
+                Item Details
+              </a>
+              </li>
+            </ul>
           </li>
           <li class="menu__item">
-            <a href="#" class="menu__item-link">
+            <a href="contact.html" class="menu__item-link">
               Contact
             </a>
           </li>
@@ -68,7 +88,7 @@
             Connect Wallet
           </span>
         </a>
-        <a href="#" class="user-panel__account img-border img-border--accent">
+        <a href="profile.html" class="user-panel__account img-border img-border--accent">
           <img class="user-panel__account-img" src="./images/humans/author-img.jpg" alt="author">
         </a>
       </div>
@@ -353,7 +373,7 @@
       </div>
     </div>
     <div class="explore__items">
-      <ul class="cards explore__cards cards--bottom">
+      <ul class="cards explore__cards cards--bottom grid">
         <li class="cards__item mix category-b">
           <article class="card-item">
             <div class="card-item__top">
@@ -1065,7 +1085,7 @@
       <h2 class="heading__title title">Live Auctions</h2>
     </div>
     <div class="auctions__items">
-      <ul class="cards auctions-items cards--bottom">
+      <ul class="cards auctions-items cards--bottom grid">
         
         <li class="cards__item">
           <article class="card-item">
@@ -1073,7 +1093,7 @@
               <a class="card-item__link" href="#">
                 <img src="./images/auctions/auction-1.jpg" alt="img" class="card-item__img">
               </a>
-              <div class="card-item__time">
+              <div class="card-item__time" id="one">
                 <span class="card-item__hour">03</span> :
                 <span class="card-item__minutes">18</span> :
                 <span class="card-item__second">24</span>
@@ -1118,7 +1138,7 @@
               <a class="card-item__link" href="#">
                 <img src="./images/auctions/auction-2.jpg" alt="img" class="card-item__img">
               </a>
-              <div class="card-item__time">
+              <div class="card-item__time" id="two">
                 <span class="card-item__hour">04</span> :
                 <span class="card-item__minutes">18</span> :
                 <span class="card-item__second">57</span>
@@ -1163,7 +1183,7 @@
               <a class="card-item__link" href="#">
                 <img src="./images/auctions/auction-3.jpg" alt="img" class="card-item__img">
               </a>
-              <div class="card-item__time">
+              <div class="card-item__time" id="three">
                 <span class="card-item__hour">03</span> :
                 <span class="card-item__minutes">18</span> :
                 <span class="card-item__second">24</span>
@@ -1208,7 +1228,7 @@
               <a class="card-item__link" href="#">
                 <img src="./images/auctions/auction-4.jpg" alt="img" class="card-item__img">
               </a>
-              <div class="card-item__time">
+              <div class="card-item__time" id="four">
                 <span class="card-item__hour">04</span> :
                 <span class="card-item__minutes">18</span> :
                 <span class="card-item__second">57</span>
@@ -1254,7 +1274,7 @@
               <a class="card-item__link" href="#">
                 <img src="./images/auctions/auction-5.jpg" alt="img" class="card-item__img">
               </a>
-              <div class="card-item__time">
+              <div class="card-item__time" id="five">
                 <span class="card-item__hour">03</span> :
                 <span class="card-item__minutes">18</span> :
                 <span class="card-item__second">24</span>
@@ -1299,7 +1319,7 @@
               <a class="card-item__link" href="#">
                 <img src="./images/auctions/auction-6.jpg" alt="img" class="card-item__img">
               </a>
-              <div class="card-item__time">
+              <div class="card-item__time" id="six">
                 <span class="card-item__hour">04</span> :
                 <span class="card-item__minutes">18</span> :
                 <span class="card-item__second">57</span>
@@ -1344,7 +1364,7 @@
               <a class="card-item__link" href="#">
                 <img src="./images/auctions/auction-7.jpg" alt="img" class="card-item__img">
               </a>
-              <div class="card-item__time">
+              <div class="card-item__time" id="seven">
                 <span class="card-item__hour">03</span> :
                 <span class="card-item__minutes">18</span> :
                 <span class="card-item__second">24</span>
@@ -1389,7 +1409,7 @@
               <a class="card-item__link" href="#">
                 <img src="./images/auctions/auction-8.jpg" alt="img" class="card-item__img">
               </a>
-              <div class="card-item__time">
+              <div class="card-item__time" id="eight">
                 <span class="card-item__hour">04</span> :
                 <span class="card-item__minutes">18</span> :
                 <span class="card-item__second">57</span>
@@ -1650,6 +1670,6 @@
 </footer>
 
   </div>
-  <script src="js/main.min.js"></script>
+  <script  src="js/main.min.js"></script>
 </body>
 </html>

@@ -22,10 +22,9 @@
     border-color: $accent;
   }
   &__content-items {
-    display: grid;
-    grid-template-columns: repeat(3, 263px);
-    grid-gap: $gap;
-
+    .cards__item {
+      grid-column: 4 span;
+    }
     .card-item__link {
       width: 233px;
       height: 233px;

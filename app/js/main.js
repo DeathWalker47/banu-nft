@@ -1,7 +1,6 @@
 // $(function(){
 
 // });
-
 // Swiper slider
 new Swiper(".creators-swiper", {
   spaceBetween: 30,
@@ -103,8 +102,61 @@ function onTabClick(el) {
   });
 }
 tabsBtn.forEach(onTabClick);
-
-document.querySelector(".tab-btn").click();
+if(document.querySelector(".tab-btn")) {
+  document.querySelector(".tab-btn").click();
+}
 
 
 // Сделать клик по кнопке author-account__follow, чтоб менялся цвет и надпись о подписке
+
+
+
+function getTimeRemaining(endtime) {
+  const total = Date.parse(endtime) - Date.parse(new Date());
+  const seconds = Math.floor((total / 1000) % 60);
+  const minutes = Math.floor((total / 1000 / 60) % 60);
+  const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
+  
+  return {
+    total,
+    hours,
+    minutes,
+    seconds
+  };
+}
+function initializeClock(id, endtime) {
+  const clock = document.getElementById(id);
+  const hoursSpan = clock.querySelector('.card-item__hour');
+  const minutesSpan = clock.querySelector('.card-item__minutes');
+  const secondsSpan = clock.querySelector('.card-item__second');
+
+
+  function updateClock() {
+    const t = getTimeRemaining(endtime);
+
+    hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+    minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+    secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+    if (t.total <= 0) {
+      clearInterval(timeinterval);
+    }
+  }
+
+  updateClock();
+  const timeinterval = setInterval(updateClock, 1000);
+}
+
+const deadline = new Date(Date.parse(new Date()) + 1 * 18 * 24 * 47 * 1000);
+const deadline2 = new Date(Date.parse(new Date()) + 3 * 3 * 24 * 31 * 1000);
+const deadline1 = new Date(Date.parse(new Date()) + 2 * 8 * 24 * 29 * 1000);
+const deadline3 = new Date(Date.parse(new Date()) + 4 * 23 * 24 * 53 * 1000);
+const deadline4 = new Date(Date.parse(new Date()) + 1 * 9 * 24 * 11 * 1000);
+initializeClock('one', deadline);
+initializeClock('two', deadline1);
+initializeClock('three', deadline);
+initializeClock('four', deadline3);
+initializeClock('five', deadline);
+initializeClock('six', deadline3);
+initializeClock('seven', deadline);
+initializeClock('seven', deadline);

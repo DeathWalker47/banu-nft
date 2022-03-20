@@ -16,24 +16,38 @@
     @include flex;
   }
   &__item {
+    position: relative;
     margin-right: 37px;
   }
+  &__item-arrow {
+    width: 13px;
+    height: 10px;
+    stroke: $default;
+    transition: all .2s ease-in-out;
+  }
   &__item-link {
+    position: relative;
+    display: block;
     @extend %poppins-500;
     font-size: 18px;
     line-height: 27px;
     text-transform: capitalize;
     color: $default;
-    transition: color 0.2s linear;
+    transition: color 0.2s ease-in-out;
 
     &:hover {
-      color: $accent;
+      color: $white;
+      .menu__item-arrow {
+        stroke: currentColor;
+        transform: rotate(180deg);
+      }
     }
     &--active {
       color: $accent;
       pointer-events: none;
     }
   }
+  
 }
 .user-panel {
   @include flex-v-center;
@@ -101,5 +115,32 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 150%;
+  left: 0;
+  width: 150px;
+  visibility: hidden;
+  opacity: 0;
+  transition: all .2s ease-in-out;
+  &__item {
+    margin-bottom: 5px;
+  }
+  &__link {
+    transition: all .2s ease-in-out;
+    &:hover {
+      font-size: 22px;
+    }
+  }
+}
+
+.menu__item--dropdown:hover {
+  .dropdown-menu {
+  top: 110%;
+  opacity: 1;
+  visibility: visible;
   }
 }
