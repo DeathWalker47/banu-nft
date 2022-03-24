@@ -1,47 +1,37 @@
-// $(function(){
-
-// });
 // Swiper slider
-new Swiper(".creators-swiper", {
-  spaceBetween: 30,
-  speed: 800,
-  loop: true,
-  slidesPerView: 6,
-  navigation: {
-    nextEl: ".creators-next",
-    prevEl: ".creators-prev",
-  },
-});
+const slidersFunction = function (sliderClassName, SlidePerView, next, prev) {
+  new Swiper(sliderClassName, {
+    spaceBetween: 30,
+    speed: 800,
+    loop: true,
+    slidesPerView: SlidePerView,
+    navigation: {
+      nextEl: next,
+      prevEl: prev,
+    },
+  });
+};
+// Слайдер Creators
+slidersFunction(".creators-swiper", 6, ".creators-next", ".creators-prev");
 
-new Swiper(".collections-slider", {
-  spaceBetween: 30,
-  speed: 800,
-  slidesPerView: 3,
-  navigation: {
-    nextEl: ".collections-next",
-    prevEl: ".collections-prev",
-  },
-});
+// Слайдер Collections
+slidersFunction(
+  ".collections-slider",
+  3,
+  ".collections-next",
+  ".collections-prev"
+);
 
-new Swiper(".questions-slider", {
-  spaceBetween: 30,
-  speed: 800,
-  slidesPerView: 3,
-  navigation: {
-    nextEl: ".questions-next",
-    prevEl: ".questions-prev",
-  },
-});
+// Слайдер Questions
+slidersFunction(".questions-slider", 3, ".questions-next", ".questions-prev");
 
-new Swiper(".explore-more__slider", {
-  spaceBetween: 30,
-  speed: 800,
-  slidesPerView: 4,
-  navigation: {
-    nextEl: ".explore-more-next",
-    prevEl: ".explore-more-prev",
-  },
-});
+// Слайдер Explore-more
+slidersFunction(
+  ".explore-more__slider",
+  4,
+  ".explore-more-next",
+  ".explore-more-prev"
+);
 
 // Filter MisitUp
 
@@ -102,41 +92,36 @@ function onTabClick(el) {
   });
 }
 tabsBtn.forEach(onTabClick);
-if(document.querySelector(".tab-btn")) {
-  document.querySelector(".tab-btn").click();
-}
-
+document.querySelector(".tab-btn")?.click();
 
 // Сделать клик по кнопке author-account__follow, чтоб менялся цвет и надпись о подписке
 
-
-
+// Таймер аукцина
 function getTimeRemaining(endtime) {
   const total = Date.parse(endtime) - Date.parse(new Date());
   const seconds = Math.floor((total / 1000) % 60);
   const minutes = Math.floor((total / 1000 / 60) % 60);
   const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
-  
+
   return {
     total,
     hours,
     minutes,
-    seconds
+    seconds,
   };
 }
 function initializeClock(id, endtime) {
-  const clock = document.getElementById(id);
-  const hoursSpan = clock.querySelector('.card-item__hour');
-  const minutesSpan = clock.querySelector('.card-item__minutes');
-  const secondsSpan = clock.querySelector('.card-item__second');
-
+  const clock = document?.getElementById(id);
+  const hoursSpan = clock?.querySelector(".card-item__hour");
+  const minutesSpan = clock?.querySelector(".card-item__minutes");
+  const secondsSpan = clock?.querySelector(".card-item__second");
 
   function updateClock() {
     const t = getTimeRemaining(endtime);
 
-    hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
-    minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
-    secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+    hoursSpan.innerHTML = ("0" + t.hours).slice(-2);
+    minutesSpan.innerHTML = ("0" + t.minutes).slice(-2);
+    secondsSpan.innerHTML = ("0" + t.seconds).slice(-2);
 
     if (t.total <= 0) {
       clearInterval(timeinterval);
@@ -152,11 +137,26 @@ const deadline2 = new Date(Date.parse(new Date()) + 3 * 3 * 24 * 31 * 1000);
 const deadline1 = new Date(Date.parse(new Date()) + 2 * 8 * 24 * 29 * 1000);
 const deadline3 = new Date(Date.parse(new Date()) + 4 * 23 * 24 * 53 * 1000);
 const deadline4 = new Date(Date.parse(new Date()) + 1 * 9 * 24 * 11 * 1000);
-initializeClock('one', deadline);
-initializeClock('two', deadline1);
-initializeClock('three', deadline);
-initializeClock('four', deadline3);
-initializeClock('five', deadline);
-initializeClock('six', deadline3);
-initializeClock('seven', deadline);
-initializeClock('seven', deadline);
+initializeClock("one", deadline);
+initializeClock("two", deadline1);
+initializeClock("three", deadline);
+initializeClock("four", deadline3);
+initializeClock("five", deadline);
+initializeClock("six", deadline3);
+initializeClock("seven", deadline);
+
+
+linkHeader.forEach(el => {
+  el.addEventListener('mouseover', e => {
+    const self = e.target;
+    linkHeader.forEach(elem  => {
+      // if(!self.classList.contains('menu__item-link--drop') ) {
+      // }
+      elem.style.filter = 'blur(1px)'
+    })
+    self.style.filter = 'blur(0px)'
+  })
+  el.addEventListener('mouseout', e => {
+    linkHeader.forEach(elem  => elem.style.filter = 'blur(0px)')
+  })
+})
