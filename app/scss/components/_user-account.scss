@@ -57,9 +57,6 @@
     padding: 8px 25px;
     border: 1px solid $default;
     cursor: pointer;
-    transition: color .2s ease-in;
-    &:hover {
-      color: $default;
-    }
+    transition: border-color .2s ease-in, background-color .2s ease-in;
   }
 }

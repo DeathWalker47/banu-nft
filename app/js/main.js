@@ -118,10 +118,11 @@ function initializeClock(id, endtime) {
 
   function updateClock() {
     const t = getTimeRemaining(endtime);
-
-    hoursSpan.innerHTML = ("0" + t.hours).slice(-2);
-    minutesSpan.innerHTML = ("0" + t.minutes).slice(-2);
-    secondsSpan.innerHTML = ("0" + t.seconds).slice(-2);
+    if (clock) {
+      hoursSpan.innerHTML = ("0" + t.hours).slice(-2);
+      minutesSpan.innerHTML = ("0" + t.minutes).slice(-2);
+      secondsSpan.innerHTML = ("0" + t.seconds).slice(-2);
+    }
 
     if (t.total <= 0) {
       clearInterval(timeinterval);
@@ -145,18 +146,46 @@ initializeClock("five", deadline);
 initializeClock("six", deadline3);
 initializeClock("seven", deadline);
 
-
-linkHeader.forEach(el => {
-  el.addEventListener('mouseover', e => {
+linkHeader.forEach((el) => {
+  el.addEventListener("mouseover", (e) => {
     const self = e.target;
-    linkHeader.forEach(elem  => {
-      // if(!self.classList.contains('menu__item-link--drop') ) {
-      // }
-      elem.style.filter = 'blur(1px)'
-    })
-    self.style.filter = 'blur(0px)'
-  })
-  el.addEventListener('mouseout', e => {
-    linkHeader.forEach(elem  => elem.style.filter = 'blur(0px)')
-  })
-})
+
+    linkHeader.forEach((elem) => {
+      elem.style.filter = "blur(1px)";
+
+      if (
+        self.classList.contains("menu__item-link--drop") ||
+        self.classList.contains("dropdown-menu__link")
+      ) {
+        document
+          .querySelectorAll(".dropdown-menu__link")
+          .forEach((link) => (link.style.filter = "blur(0px)"));
+      }
+    });
+
+    self.style.filter = "blur(0px)";
+  });
+  el.addEventListener("mouseout", (e) => {
+    linkHeader.forEach((elem) => (elem.style.filter = "blur(0px)"));
+  });
+});
+
+
+// Имплиментация клика по кнопке Follow (изменение текта, цвета бордера и фона)
+const follow = document.querySelectorAll(".author-account__follow");
+let followBullet = true; // нужна,чтобы не добавлять класс
+
+follow.forEach((el) => {
+  el.addEventListener("click", (e) => {
+    const self = e.target;
+    const followSettings = function (content, borderColor, backgroundColor) {
+      self.textContent = content;
+      self.style.borderColor = borderColor;
+      self.style.backgroundColor = backgroundColor;
+      followBullet = !followBullet;
+    };
+    followBullet
+      ? followSettings("Unfollow", "#ff512f", "#ff512f")
+      : followSettings("Follow", "#a1a1a1", "transparent");
+  });
+});
