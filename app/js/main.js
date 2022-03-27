@@ -170,22 +170,85 @@ linkHeader.forEach((el) => {
   });
 });
 
-
 // Имплиментация клика по кнопке Follow (изменение текта, цвета бордера и фона)
 const follow = document.querySelectorAll(".author-account__follow");
+const cartBid = document.querySelectorAll(".card-item__bid");
+
 let followBullet = true; // нужна,чтобы не добавлять класс
 
+const followSettings = function (elem, content, borderColor, backgroundColor) {
+  elem.textContent = content;
+  elem.style.borderColor = borderColor;
+  elem.style.background = backgroundColor;
+  followBullet = !followBullet;
+};
 follow.forEach((el) => {
   el.addEventListener("click", (e) => {
     const self = e.target;
-    const followSettings = function (content, borderColor, backgroundColor) {
-      self.textContent = content;
-      self.style.borderColor = borderColor;
-      self.style.backgroundColor = backgroundColor;
-      followBullet = !followBullet;
-    };
     followBullet
-      ? followSettings("Unfollow", "#ff512f", "#ff512f")
-      : followSettings("Follow", "#a1a1a1", "transparent");
+      ? followSettings(
+          self,
+          "Unfollow",
+          "#ff512f",
+          "linear-gradient(93.95deg, #ff512f 0%, #dd2476 100%)"
+        )
+      : followSettings(self, "Follow", "#a1a1a1", "transparent");
+  });
+});
+
+cartBid.forEach((el) => {
+  el.addEventListener("click", (e) => {
+    e.preventDefault();
+    const self = e.target;
+    followBullet
+      ? followSettings(
+          self,
+          "Accepted",
+          "transparent",
+          "linear-gradient(93.95deg, #ff512f 0%, #dd2476 100%)"
+        )
+      : followSettings(self, "Place a bid", "transparent", "#09080d");
+  });
+});
+
+const heartFill = document.querySelectorAll(".card-item__like-btn");
+
+let heartBull = true;
+
+const heartSettings = function (
+  elem,
+  attrStoke,
+  colorStroke,
+  attrFill,
+  colorFill
+) {
+  elem.setAttribute(attrStoke, colorStroke);
+  elem.setAttribute(attrFill, colorFill);
+  heartBull = !heartBull;
+};
+
+heartFill.forEach((el) => {
+  el.addEventListener("click", (e) => {
+    const self = e.currentTarget;
+    heartBull
+      ? heartSettings(self.querySelector("path"), "stroke", "#ff512f", "fill", "#ff512f")
+      : heartSettings(self.querySelector("path"), "stroke", "#a1a1a1", "fill", "none");
+    // if (heartBull) {
+    //   heartSettings(
+    //     self.querySelector("path"),
+    //     "stroke",
+    //     "#ff512f",
+    //     "fill",
+    //     "#ff512f"
+    //   );
+    // } else {
+    //   heartSettings(
+    //     self.querySelector("path"),
+    //     "stroke",
+    //     "#a1a1a1",
+    //     "fill",
+    //     "none"
+    //   );
+    // }
   });
 });
