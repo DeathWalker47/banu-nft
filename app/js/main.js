@@ -200,14 +200,16 @@ cartBid.forEach((el) => {
   el.addEventListener("click", (e) => {
     e.preventDefault();
     const self = e.target;
-    followBullet
-      ? followSettings(
-          self,
-          "Accepted",
-          "transparent",
-          "linear-gradient(93.95deg, #ff512f 0%, #dd2476 100%)"
-        )
-      : followSettings(self, "Place a bid", "transparent", "#09080d");
+    if(!el.classList.contains('card-item__price')){
+      followBullet
+        ? followSettings(
+            self,
+            "Accepted",
+            "transparent",
+            "linear-gradient(93.95deg, #ff512f 0%, #dd2476 100%)"
+          )
+        : followSettings(self, "Place a bid", "transparent", "#09080d");
+    }
   });
 });
 
