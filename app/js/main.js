@@ -174,15 +174,16 @@ linkHeader.forEach((el) => {
 const follow = document.querySelectorAll(".author-account__follow");
 const cartBid = document.querySelectorAll(".card-item__bid");
 
-let followBullet = true; // нужна,чтобы не добавлять класс
+// let followBullet = true; // нужна,чтобы не добавлять класс
 
 const followSettings = function (elem, content, borderColor, backgroundColor) {
   elem.textContent = content;
   elem.style.borderColor = borderColor;
   elem.style.background = backgroundColor;
-  followBullet = !followBullet;
 };
+
 follow.forEach((el) => {
+  let followBullet = true;
   el.addEventListener("click", (e) => {
     const self = e.target;
     followBullet
@@ -193,15 +194,18 @@ follow.forEach((el) => {
           "linear-gradient(93.95deg, #ff512f 0%, #dd2476 100%)"
         )
       : followSettings(self, "Follow", "#a1a1a1", "transparent");
+    followBullet = !followBullet;
   });
 });
 
 cartBid.forEach((el) => {
+  let bidBullet = true;
+
   el.addEventListener("click", (e) => {
     e.preventDefault();
     const self = e.target;
-    if(!el.classList.contains('card-item__price')){
-      followBullet
+    if (!el.classList.contains("card-item__price")) {
+      bidBullet
         ? followSettings(
             self,
             "Accepted",
@@ -209,13 +213,12 @@ cartBid.forEach((el) => {
             "linear-gradient(93.95deg, #ff512f 0%, #dd2476 100%)"
           )
         : followSettings(self, "Place a bid", "transparent", "#09080d");
+      bidBullet = !bidBullet;
     }
   });
 });
 
 const heartFill = document.querySelectorAll(".card-item__like-btn");
-
-let heartBull = true;
 
 const heartSettings = function (
   elem,
@@ -226,15 +229,32 @@ const heartSettings = function (
 ) {
   elem.setAttribute(attrStoke, colorStroke);
   elem.setAttribute(attrFill, colorFill);
-  heartBull = !heartBull;
 };
 
 heartFill.forEach((el) => {
+  let heartBull = true;
+
   el.addEventListener("click", (e) => {
     const self = e.currentTarget;
+    console.log(heartBull);
     heartBull
-      ? heartSettings(self.querySelector("path"), "stroke", "#ff512f", "fill", "#ff512f")
-      : heartSettings(self.querySelector("path"), "stroke", "#a1a1a1", "fill", "none");
+      ? heartSettings(
+          self.querySelector("path"),
+          "stroke",
+          "#ff512f",
+          "fill",
+          "#ff512f"
+        )
+      : heartSettings(
+          self.querySelector("path"),
+          "stroke",
+          "#a1a1a1",
+          "fill",
+          "none"
+        );
+    heartBull = !heartBull;
+
+    console.log(heartBull);
     // if (heartBull) {
     //   heartSettings(
     //     self.querySelector("path"),
