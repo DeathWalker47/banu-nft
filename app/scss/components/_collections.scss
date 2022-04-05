@@ -19,6 +19,7 @@
     overflow: hidden;
     width: 370px;
     height: 240px;
+    background-color: #0d0f1b;
     margin-bottom: 20px;
   }
   &__big-img {
@@ -32,6 +33,7 @@
   &__small-img {
     width: 110px;
     height: 110px;
+    background-color: #1b1c31;
     border-radius: 25px;
     overflow: hidden;
     &:not(:last-child) {

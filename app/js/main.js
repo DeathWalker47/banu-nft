@@ -1,3 +1,20 @@
+// Счетчик цифр
+const countNumbres = document.querySelectorAll(".top__item-num");
+
+function counter(ms, elem, number) {
+  let counter = 0;
+  let interval = setInterval(() => {
+    elem.textContent = ++counter + "k+";
+    counter === number ? clearInterval(interval) : false;
+  }, ms);
+}
+
+countNumbres.forEach((el) => {
+  let self = Number(el.dataset.num);
+  el.textContent = self + "k+";
+  counter(100, el, self);
+});
+
 // Swiper slider
 const slidersFunction = function (sliderClassName, SlidePerView, next, prev) {
   new Swiper(sliderClassName, {
@@ -94,7 +111,6 @@ function onTabClick(el) {
 tabsBtn.forEach(onTabClick);
 document.querySelector(".tab-btn")?.click();
 
-// Сделать клик по кнопке author-account__follow, чтоб менялся цвет и надпись о подписке
 
 // Таймер аукцина
 function getTimeRemaining(endtime) {
@@ -146,6 +162,8 @@ initializeClock("five", deadline);
 initializeClock("six", deadline3);
 initializeClock("seven", deadline);
 
+
+// имплиментация hover эффекта на меню 
 linkHeader.forEach((el) => {
   el.addEventListener("mouseover", (e) => {
     const self = e.target;
@@ -173,8 +191,6 @@ linkHeader.forEach((el) => {
 // Имплиментация клика по кнопке Follow (изменение текта, цвета бордера и фона)
 const follow = document.querySelectorAll(".author-account__follow");
 const cartBid = document.querySelectorAll(".card-item__bid");
-
-// let followBullet = true; // нужна,чтобы не добавлять класс
 
 const followSettings = function (elem, content, borderColor, backgroundColor) {
   elem.textContent = content;
@@ -218,7 +234,15 @@ cartBid.forEach((el) => {
   });
 });
 
+// Имплиментация клика по сердцу
 const heartFill = document.querySelectorAll(".card-item__like-btn");
+const cardLikes = document.querySelectorAll(".card-item__like-num");
+
+// здесь я присваиваю значение дата атрибута каждому элементу
+cardLikes.forEach((el) => {
+  let likeNumb = Number(el.dataset.likeNumber);
+  el.textContent = likeNumb;
+});
 
 const heartSettings = function (
   elem,
@@ -236,41 +260,31 @@ heartFill.forEach((el) => {
 
   el.addEventListener("click", (e) => {
     const self = e.currentTarget;
-    console.log(heartBull);
-    heartBull
-      ? heartSettings(
-          self.querySelector("path"),
-          "stroke",
-          "#ff512f",
-          "fill",
-          "#ff512f"
-        )
-      : heartSettings(
-          self.querySelector("path"),
-          "stroke",
-          "#a1a1a1",
-          "fill",
-          "none"
-        );
-    heartBull = !heartBull;
+    const heartnNumb = self.nextElementSibling; // Следующий элемент от того, на который нажал
+    let heartLikes = Number(self.nextElementSibling.dataset.likeNumber); // дата атрибут следующего элемента
 
-    console.log(heartBull);
-    // if (heartBull) {
-    //   heartSettings(
-    //     self.querySelector("path"),
-    //     "stroke",
-    //     "#ff512f",
-    //     "fill",
-    //     "#ff512f"
-    //   );
-    // } else {
-    //   heartSettings(
-    //     self.querySelector("path"),
-    //     "stroke",
-    //     "#a1a1a1",
-    //     "fill",
-    //     "none"
-    //   );
-    // }
+    // Если значение тру,то меняем цвет сердца и увеличиваем лайки на 1
+    if (heartBull) {
+      heartSettings(
+        self.querySelector("path"),
+        "stroke",
+        "#ff512f",
+        "fill",
+        "#ff512f"
+      );
+      heartLikes++; // увеличиваем значение на 1
+      heartnNumb.textContent = heartLikes;
+    } else {
+      // В противном случае убираем цвет сердца и возвращаем лайки в исходное положение
+      heartSettings(
+        self.querySelector("path"),
+        "stroke",
+        "#a1a1a1",
+        "fill",
+        "none"
+      );
+      heartnNumb.textContent = heartLikes;
+    }
+    heartBull = !heartBull;
   });
 });

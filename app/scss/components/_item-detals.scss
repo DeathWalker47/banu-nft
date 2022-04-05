@@ -10,12 +10,13 @@
   &__images {
     position: relative;
     margin-right: 60px;
-    width: 520px;
-    height: 680px;
   }
 
   &__img-link {
     display: block;
+    width: 520px;
+    height: 680px;
+    background-color: #d02e84;
     border-radius: 15px;
     overflow: hidden;
   }
