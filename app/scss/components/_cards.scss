@@ -105,6 +105,38 @@
       color: $accent;
     }
   }
+  &__drop {
+    position: relative;
+  }
+  &__drop-list {
+    position: absolute;
+    width: 200px;
+    max-height: 180px;
+    overflow-y: auto;
+    top: 100%;
+    right: 0;
+    padding: 10px 15px!important;
+    text-align: left;
+    backdrop-filter: blur(5px);
+    border: 1px solid #a1a1a1;
+    border-radius: 12px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+    z-index: 5;
+    &--active {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  &__drop-link {
+    color: $white;
+    transition: color .3s ease-in-out;
+
+    &:hover {
+      color: $accent;
+    }
+  }
   &__content-dots,
   &__like-btn {
     border: none;

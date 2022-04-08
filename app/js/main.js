@@ -61,6 +61,24 @@ if (document.querySelector(".explore__cards")) {
   });
 }
 
+// Клик по точкам на карточке
+const dotsMenu = document.querySelectorAll(".card-item__content-dots");
+dotsMenu.forEach((el) => {
+  el.addEventListener("click", (e) => {
+    const self = e.currentTarget;
+    if(self.nextElementSibling.classList.contains('card-item__drop-list--active')) {
+      document.querySelectorAll(".card-item__drop-list").forEach((ele) => {
+        ele.classList.remove("card-item__drop-list--active");
+      });
+    } else {
+      document.querySelectorAll(".card-item__drop-list").forEach((ele) => {
+        ele.classList.remove("card-item__drop-list--active");
+      });
+      self.nextElementSibling.classList.toggle("card-item__drop-list--active");
+    }
+  });
+});
+
 // Небольшой аккордеон
 const filterTitle = document.querySelectorAll(".filter__item-title");
 filterTitle.forEach((el) => {
@@ -110,7 +128,6 @@ function onTabClick(el) {
 }
 tabsBtn.forEach(onTabClick);
 document.querySelector(".tab-btn")?.click();
-
 
 // Таймер аукцина
 function getTimeRemaining(endtime) {
@@ -162,8 +179,7 @@ initializeClock("five", deadline);
 initializeClock("six", deadline3);
 initializeClock("seven", deadline);
 
-
-// имплиментация hover эффекта на меню 
+// имплиментация hover эффекта на меню
 linkHeader.forEach((el) => {
   el.addEventListener("mouseover", (e) => {
     const self = e.target;
@@ -221,18 +237,22 @@ cartBid.forEach((el) => {
     e.preventDefault();
     const self = e.target;
     if (!el.classList.contains("card-item__price")) {
-      if(el.classList.contains('descriptions__link')) {
+      if (el.classList.contains("descriptions__link")) {
         bidBullet
-        ? followSettings(
-            self,
-            "Accepted",
-            "transparent",
-            "linear-gradient(93.95deg, #ff512f 0%, #dd2476 100%)"
-          )
-        : followSettings(self, "Place a bid", "transparent", '#ff512f 0%, #dd2476 100%');
-      bidBullet = !bidBullet;
+          ? followSettings(
+              self,
+              "Accepted",
+              "transparent",
+              "linear-gradient(93.95deg, #ff512f 0%, #dd2476 100%)"
+            )
+          : followSettings(
+              self,
+              "Place a bid",
+              "transparent",
+              "#ff512f 0%, #dd2476 100%"
+            );
+        bidBullet = !bidBullet;
       } else {
-
         bidBullet
           ? followSettings(
               self,
