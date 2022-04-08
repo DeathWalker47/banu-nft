@@ -221,15 +221,28 @@ cartBid.forEach((el) => {
     e.preventDefault();
     const self = e.target;
     if (!el.classList.contains("card-item__price")) {
-      bidBullet
+      if(el.classList.contains('descriptions__link')) {
+        bidBullet
         ? followSettings(
             self,
             "Accepted",
             "transparent",
             "linear-gradient(93.95deg, #ff512f 0%, #dd2476 100%)"
           )
-        : followSettings(self, "Place a bid", "transparent", "#09080d");
+        : followSettings(self, "Place a bid", "transparent", '#ff512f 0%, #dd2476 100%');
       bidBullet = !bidBullet;
+      } else {
+
+        bidBullet
+          ? followSettings(
+              self,
+              "Accepted",
+              "transparent",
+              "linear-gradient(93.95deg, #ff512f 0%, #dd2476 100%)"
+            )
+          : followSettings(self, "Place a bid", "transparent", "#09080d");
+        bidBullet = !bidBullet;
+      }
     }
   });
 });
