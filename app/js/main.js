@@ -6,20 +6,30 @@ const modalOverlay = document.querySelector('.modal-overlay'),
       modalOpenLink = document.querySelector('.user-panel__notific'),
       modalBtnClose = document.querySelector('.modal-content__btn'),
       modalLikeBtn = document.querySelectorAll('.card-item__likes-btn'),
-      modalText = document.createElement('h2');// создание элемента h2
-
+      modalText = document.createElement('h2'),// создание элемента h2
+      fixedBlock = document.querySelectorAll('.fixed-block');
 modalText.classList.add('modal-content__message');
 
 // Функции для открытия и закрытия модакли
 const openModalWindow = () => {
   modalOverlay.classList.add('modal-overlay--visible');
   modalWindow.classList.add('modal--visible');
+
+// Убираем прыжок сайта при открытии модалки
+  let paddingOffset = window.innerWidth - document.body.offsetWidth + 'px';// Находим ширину скролла путем нахождение ширины ОКНА, из которой вычитаем ширину документа без учета скролла
+  document.body.style.paddingRight = paddingOffset;// далее делаем документу паддинг, равной ширине скролла,которую мы нашли выше
+  fixedBlock.forEach(el => el.style.paddingRight = paddingOffset)// всем фиксированным блокам задаем тот же паддинг,чтоб они не прыгали
+
   document.querySelector('body').classList.add('hidden');
 }
 const closeModalWindow = () => {
     modalOverlay.classList.remove('modal-overlay--visible');
     modalWindow.classList.remove('modal--visible');
     document.querySelector('body').classList.remove('hidden');
+
+    // Тут мы убираем паддинг
+    document.body.style.paddingRight = 0;
+    fixedBlock.forEach(el => el.style.paddingRight = 0)
 }
 
 // функция для проверки,есть ли элементы в корзине, если нет,то будет выводиться сообщение,которое укажите в функции
@@ -48,6 +58,8 @@ document.addEventListener('keydown', (e)=> {
     closeModalWindow();
   }
 });
+
+
 
 //Удаление элементов по клику на сердечко
 modalLikeBtn.forEach(el => {
@@ -240,6 +252,9 @@ initializeClock("four", deadline3);
 initializeClock("five", deadline);
 initializeClock("six", deadline3);
 initializeClock("seven", deadline);
+initializeClock("eight", deadline2);
+initializeClock("nine", deadline1);
+initializeClock("ten", deadline3);
 
 // имплиментация hover эффекта на меню
 linkHeader.forEach((el) => {
