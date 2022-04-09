@@ -3,4 +3,9 @@
   &__items {
     text-align: center;
   }
+  .cards__item {
+    &:nth-child(n + 9) {
+        display: none;
+    }
+  }
 }

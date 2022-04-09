@@ -66,7 +66,9 @@ const dotsMenu = document.querySelectorAll(".card-item__content-dots");
 dotsMenu.forEach((el) => {
   el.addEventListener("click", (e) => {
     const self = e.currentTarget;
-    if(self.nextElementSibling.classList.contains('card-item__drop-list--active')) {
+    if (
+      self.nextElementSibling.classList.contains("card-item__drop-list--active")
+    ) {
       document.querySelectorAll(".card-item__drop-list").forEach((ele) => {
         ele.classList.remove("card-item__drop-list--active");
       });
@@ -321,3 +323,19 @@ heartFill.forEach((el) => {
     heartBull = !heartBull;
   });
 });
+
+const auctionsBlock = document.querySelector(".auctions__items");
+const auctionsItems = auctionsBlock.querySelectorAll(".cards__item");
+const auctionsLink = auctionsBlock.querySelector(".explore__items-link");
+if (auctionsItems.length <= 8) {
+  auctionsLink.style.display = "none";
+} else {
+  auctionsLink.style.display = "inline-block";
+}
+auctionsLink.addEventListener("click", (e) => {
+  e.preventDefault();
+  const self = e.currentTarget;
+  auctionsItems.forEach((el) => el.style.display = "block");
+    self.style.display = "none";
+});
+console.log(auctionsItems.length);
