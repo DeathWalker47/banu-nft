@@ -23,7 +23,7 @@
     width: 13px;
     height: 10px;
     stroke: $default;
-    transition: all .2s ease-in-out;
+    transition: all 0.2s ease-in-out;
   }
   &__item-link {
     position: relative;
@@ -47,7 +47,6 @@
       pointer-events: none;
     }
   }
-  
 }
 .user-panel {
   @include flex-v-center;
@@ -64,7 +63,7 @@
     width: 24px;
     height: 24px;
     fill: $default;
-    transition:  fill .2s ease-in;
+    transition: fill 0.2s ease-in;
 
     &:hover {
       fill: $white;
@@ -77,6 +76,12 @@
     margin-right: 30px;
     border: 1px solid $default;
     border-radius: 50%;
+
+    &:hover {
+      .user-panel__notific-img {
+        animation: bell 0.4s linear;
+      }
+    }
   }
   &__notific-num {
     position: absolute;
@@ -125,12 +130,12 @@
   width: 150px;
   visibility: hidden;
   opacity: 0;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   &__item {
     margin-bottom: 5px;
   }
   &__link {
-    transition: all .2s ease-in-out;
+    transition: all 0.2s ease-in-out;
     &:hover {
       font-size: 22px;
     }
@@ -139,8 +144,8 @@
 
 .menu__item--dropdown:hover {
   .dropdown-menu {
-  top: 110%;
-  opacity: 1;
-  visibility: visible;
+    top: 110%;
+    opacity: 1;
+    visibility: visible;
   }
 }

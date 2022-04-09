@@ -1,3 +1,63 @@
+// Modal window
+
+const modalOverlay = document.querySelector('.modal-overlay'),
+      modalWindow  = document.querySelector('.modal'),
+      modalConent = document.querySelector('.modal-content'),
+      modalOpenLink = document.querySelector('.user-panel__notific'),
+      modalBtnClose = document.querySelector('.modal-content__btn'),
+      modalLikeBtn = document.querySelectorAll('.card-item__likes-btn'),
+      modalText = document.createElement('h2');// создание элемента h2
+
+modalText.classList.add('modal-content__message');
+
+// Функции для открытия и закрытия модакли
+const openModalWindow = () => {
+  modalOverlay.classList.add('modal-overlay--visible');
+  modalWindow.classList.add('modal--visible');
+  document.querySelector('body').classList.add('hidden');
+}
+const closeModalWindow = () => {
+    modalOverlay.classList.remove('modal-overlay--visible');
+    modalWindow.classList.remove('modal--visible');
+    document.querySelector('body').classList.remove('hidden');
+}
+
+// функция для проверки,есть ли элементы в корзине, если нет,то будет выводиться сообщение,которое укажите в функции
+const cartEmpty = (message) => {
+  if(modalWindow.querySelectorAll('.card-item').length === 0) {
+    modalText.textContent = message;
+    modalConent.append(modalText);
+    setTimeout(closeModalWindow,3000)
+  }
+}
+
+modalOpenLink.addEventListener('click', (e) => {
+  e.preventDefault()
+  openModalWindow()
+  cartEmpty('Cart is empty') // србщение,если корзина пуста
+})
+modalOverlay.addEventListener('click', (e) => {
+  if(e.target == modalOverlay || e.target == modalWindow || e.target == modalBtnClose) {
+    closeModalWindow()
+  }
+})
+
+// закрытие на кнопку esc
+document.addEventListener('keydown', (e)=> {
+  if (e.key === 'Escape' ) {
+    closeModalWindow();
+  }
+});
+
+//Удаление элементов по клику на сердечко
+modalLikeBtn.forEach(el => {
+  el.addEventListener('click', (e)=> {
+    const self = e.currentTarget;
+    self.closest('.card-item').remove()
+    cartEmpty('You have cleared the basket of all items.')// сообщение, когда корзина будет пустой после удалеия элементов
+  })
+})
+
 // Счетчик цифр
 const countNumbres = document.querySelectorAll(".top__item-num");
 
@@ -338,4 +398,3 @@ auctionsLink.addEventListener("click", (e) => {
   auctionsItems.forEach((el) => el.style.display = "block");
     self.style.display = "none";
 });
-console.log(auctionsItems.length);
