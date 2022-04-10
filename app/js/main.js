@@ -1,74 +1,77 @@
 // Modal window
 
-const modalOverlay = document.querySelector('.modal-overlay'),
-      modalWindow  = document.querySelector('.modal'),
-      modalConent = document.querySelector('.modal-content'),
-      modalOpenLink = document.querySelector('.user-panel__notific'),
-      modalBtnClose = document.querySelector('.modal-content__btn'),
-      modalLikeBtn = document.querySelectorAll('.card-item__likes-btn'),
-      modalText = document.createElement('h2'),// создание элемента h2
-      fixedBlock = document.querySelectorAll('.fixed-block');
-modalText.classList.add('modal-content__message');
+const modalOverlay = document.querySelector(".modal-overlay"),
+  modalWindow = document.querySelector(".modal"),
+  modalConent = document.querySelector(".modal-content"),
+  modalOpenLink = document.querySelector(".user-panel__notific"),
+  modalBtnClose = document.querySelector(".modal-content__btn"),
+  modalLikeBtn = document.querySelectorAll(".card-item__likes-btn"),
+  modalText = document.createElement("h2"), // создание элемента h2
+  fixedBlock = document.querySelectorAll(".fixed-block");
+modalText.classList.add("modal-content__message");
 
-// Функции для открытия и закрытия модакли
+// Функции для открытия  модакли
 const openModalWindow = () => {
-  modalOverlay.classList.add('modal-overlay--visible');
-  modalWindow.classList.add('modal--visible');
+  modalOverlay.classList.add("modal-overlay--visible");
+  modalWindow.classList.add("modal--visible");
 
-// Убираем прыжок сайта при открытии модалки
-  let paddingOffset = window.innerWidth - document.body.offsetWidth + 'px';// Находим ширину скролла путем нахождение ширины ОКНА, из которой вычитаем ширину документа без учета скролла
-  document.body.style.paddingRight = paddingOffset;// далее делаем документу паддинг, равной ширине скролла,которую мы нашли выше
-  fixedBlock.forEach(el => el.style.paddingRight = paddingOffset)// всем фиксированным блокам задаем тот же паддинг,чтоб они не прыгали
+  // Убираем прыжок сайта при открытии модалки
+  let paddingOffset = window.innerWidth - document.body.offsetWidth + "px"; // Находим ширину скролла путем нахождение ширины ОКНА, из которой вычитаем ширину документа без учета скролла
+  document.body.style.paddingRight = paddingOffset; // далее делаем документу паддинг, равной ширине скролла,которую мы нашли выше
+  fixedBlock.forEach((el) => (el.style.paddingRight = paddingOffset)); // всем фиксированным блокам задаем тот же паддинг,чтоб они не прыгали
 
-  document.querySelector('body').classList.add('hidden');
-}
+  document.querySelector("body").classList.add("hidden");
+
+  //Удаление элементов по клику на сердечко
+  modalLikeBtn.forEach((el) => {
+    el.addEventListener("click", (e) => {
+      const self = e.currentTarget;
+      self.closest(".card-item").remove();
+      cartEmpty("You have cleared the basket of all items."); // сообщение, когда корзина будет пустой после удалеия элементов
+    });
+  });
+};
+// Функции для закрытия модакли
 const closeModalWindow = () => {
-    modalOverlay.classList.remove('modal-overlay--visible');
-    modalWindow.classList.remove('modal--visible');
-    document.querySelector('body').classList.remove('hidden');
+  modalOverlay.classList.remove("modal-overlay--visible");
+  modalWindow.classList.remove("modal--visible");
+  document.querySelector("body").classList.remove("hidden");
 
-    // Тут мы убираем паддинг
-    document.body.style.paddingRight = 0;
-    fixedBlock.forEach(el => el.style.paddingRight = 0)
-}
+  // Тут мы убираем паддинг
+  document.body.style.paddingRight = 0;
+  fixedBlock.forEach((el) => (el.style.paddingRight = 0));
+};
 
 // функция для проверки,есть ли элементы в корзине, если нет,то будет выводиться сообщение,которое укажите в функции
 const cartEmpty = (message) => {
-  if(modalWindow.querySelectorAll('.card-item').length === 0) {
+  if (modalWindow.querySelectorAll(".card-item").length === 0) {
     modalText.textContent = message;
     modalConent.append(modalText);
-    setTimeout(closeModalWindow,3000)
+    setTimeout(closeModalWindow, 3000);
   }
-}
+};
 
-modalOpenLink.addEventListener('click', (e) => {
-  e.preventDefault()
-  openModalWindow()
-  cartEmpty('Cart is empty') // србщение,если корзина пуста
-})
-modalOverlay.addEventListener('click', (e) => {
-  if(e.target == modalOverlay || e.target == modalWindow || e.target == modalBtnClose) {
-    closeModalWindow()
-  }
-})
-
-// закрытие на кнопку esc
-document.addEventListener('keydown', (e)=> {
-  if (e.key === 'Escape' ) {
+modalOpenLink.addEventListener("click", (e) => {
+  e.preventDefault();
+  openModalWindow();
+  cartEmpty("Cart is empty"); // србщение,если корзина пуста
+});
+modalOverlay.addEventListener("click", (e) => {
+  if (
+    e.target == modalOverlay ||
+    e.target == modalWindow ||
+    e.target == modalBtnClose
+  ) {
     closeModalWindow();
   }
 });
 
-
-
-//Удаление элементов по клику на сердечко
-modalLikeBtn.forEach(el => {
-  el.addEventListener('click', (e)=> {
-    const self = e.currentTarget;
-    self.closest('.card-item').remove()
-    cartEmpty('You have cleared the basket of all items.')// сообщение, когда корзина будет пустой после удалеия элементов
-  })
-})
+// закрытие на кнопку esc
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    closeModalWindow();
+  }
+});
 
 // Счетчик цифр
 const countNumbres = document.querySelectorAll(".top__item-num");
@@ -399,6 +402,8 @@ heartFill.forEach((el) => {
   });
 });
 
+
+// Кнопка показать еще
 const auctionsBlock = document.querySelector(".auctions__items");
 const auctionsItems = auctionsBlock.querySelectorAll(".cards__item");
 const auctionsLink = auctionsBlock.querySelector(".explore__items-link");
@@ -410,6 +415,6 @@ if (auctionsItems.length <= 8) {
 auctionsLink.addEventListener("click", (e) => {
   e.preventDefault();
   const self = e.currentTarget;
-  auctionsItems.forEach((el) => el.style.display = "block");
-    self.style.display = "none";
+  auctionsItems.forEach((el) => (el.style.display = "block"));
+  self.style.display = "none";
 });
