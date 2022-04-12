@@ -402,19 +402,43 @@ heartFill.forEach((el) => {
   });
 });
 
-
 // Кнопка показать еще
-const auctionsBlock = document.querySelector(".auctions__items");
-const auctionsItems = auctionsBlock.querySelectorAll(".cards__item");
-const auctionsLink = auctionsBlock.querySelector(".explore__items-link");
-if (auctionsItems.length <= 8) {
-  auctionsLink.style.display = "none";
-} else {
-  auctionsLink.style.display = "inline-block";
+const auctionsBlock = document?.querySelector(".auctions__items");
+const auctionsItems = auctionsBlock?.querySelectorAll(".cards__item");
+const auctionsLink = auctionsBlock?.querySelector(".explore__items-link");
+
+if (auctionsLink) {
+  if (auctionsItems.length <= 8) {
+    auctionsLink.style.display = "none";
+  } else {
+    auctionsLink.style.display = "inline-block";
+  }
+  auctionsLink.addEventListener("click", (e) => {
+    e.preventDefault();
+    const self = e.currentTarget;
+    auctionsItems.forEach((el) => (el.style.display = "block"));
+    self.style.display = "none";
+  });
 }
-auctionsLink.addEventListener("click", (e) => {
-  e.preventDefault();
-  const self = e.currentTarget;
-  auctionsItems.forEach((el) => (el.style.display = "block"));
-  self.style.display = "none";
-});
+
+// Показать еще для фильтров
+
+const loadMoreBtnFilter = document.querySelector(".filter__load-btn");
+const filterHiddenHaight = document.querySelector(".filter__form--categories");
+
+if (loadMoreBtnFilter) {
+  loadMoreBtnFilter.addEventListener("click", (e) => {
+    const self = e.currentTarget;
+    if (self.dataset.hidden == "true") {
+      filterHiddenHaight.style.maxHeight = filterHiddenHaight.scrollHeight + "px";
+      self.classList.add("filter__load-btn--hidden");
+      self.textContent = "Hide";
+      self.dataset.hidden = "false";
+    } else {
+      filterHiddenHaight.style.maxHeight = `145px`;
+      self.classList.remove("filter__load-btn--hidden");
+      self.textContent = "Show more";
+      self.dataset.hidden = "true";
+    }
+  })
+}

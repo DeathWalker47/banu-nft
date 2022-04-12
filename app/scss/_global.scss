@@ -77,6 +77,8 @@ body {
   line-height: 28px;
   color: $white;
   border-radius: 50px;
+  border: none;
+  cursor: pointer;
   @extend %poppins-500;
   transition: all 0.2s linear;
   &:hover {
