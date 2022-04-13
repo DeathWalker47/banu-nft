@@ -15,6 +15,15 @@
   }
 }
 .explore-filter {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__list-item {
+    &:not(:last-child) {
+      margin-right: 11px;
+    }
+  }
   &__btn {
     border: 1px solid $default;
     color: $default;
@@ -25,9 +34,7 @@
     padding: 8px 18px;
     transition: color 0.2s ease-in;
 
-    &:not(:last-child) {
-      margin-right: 11px;
-    }
+    
 
     &:hover {
       color: $white;
