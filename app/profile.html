@@ -14,8 +14,8 @@
     <header class="header fixed-block">
   <div class="container-content">
     <div class="header__inner">
-      <a href="index.html" class="logo">
-        <img loading="lazy" src="./images/logo.png" alt="logo">
+      <a href="index.html" class="logo" aria-label="logo">
+        <img loading="lazy" src="./images/logo.png" alt="logo" aria-hidden="true">
       </a>
       <nav class="menu">
         <ul class="menu__list">
@@ -77,7 +77,7 @@
             <use xlink:href="./images/sprite.svg#search"></use>
           </svg>
         </button>
-        <a href="#" class="user-panel__notific">
+        <a href="#" class="user-panel__notific" aria-label="Open basket">
           <svg class="user-panel__notific-img">
             <use xlink:href="./images/sprite.svg#bell"></use>
           </svg>
@@ -89,8 +89,8 @@
             Connect Wallet
           </span>
         </a>
-        <a href="profile.html" class="user-panel__account img-border img-border--accent">
-          <img loading="lazy" class="user-panel__account-img" src="./images/humans/author-img.jpg" alt="author">
+        <a href="profile.html" class="user-panel__account img-border img-border--accent" aria-label="Open my page">
+          <img loading="lazy" class="user-panel__account-img" src="./images/humans/author-img.jpg" alt="My photo">
         </a>
       </div>
     </div>
@@ -101,7 +101,7 @@
   <div class="container">
     <div class="head__content">
       <h1 class="head__title">
-        Explore
+        Profile
       </h1>
       <div class="breadcrumbs">
         <ul class="breadcrumbs__list">
@@ -109,7 +109,7 @@
             <a href="index.html" class="breadcrumbs__link">Home</a>
           </li>
           <li class="breadcrumbs__item">
-            <a href="explore.html" class="breadcrumbs__link breadcrumbs__link--active">Explore</a>
+            <a href="explore.html" class="breadcrumbs__link breadcrumbs__link--active">Profile</a>
           </li>
         </ul>
       </div>
@@ -197,7 +197,7 @@
               </a>
             </li>
           </ul>
-          <button class="author-account__follow">
+          <button class="follow">
             Follow
           </button>
         </div>

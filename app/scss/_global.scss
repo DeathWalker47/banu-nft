@@ -60,12 +60,22 @@ body {
 
 .btn-fill {
   background: $dark;
-  transition:  all .3s linear;
+  transition: color 0.3s linear;
+
+  &:focus {
+    outline: 1px solid $accent;
+    outline-offset: 2px;
+  }
+
   &:hover {
     background: $gradient;
     * {
       color: $white;
     }
+  }
+
+  &:active {
+    color: $default;
   }
 }
 
@@ -80,9 +90,19 @@ body {
   border: none;
   cursor: pointer;
   @extend %poppins-500;
-  transition: all 0.2s linear;
+  transition: color 0.2s linear;
+
+  &:focus {
+    outline: 1px solid $accent;
+    outline-offset: 2px;
+  }
+
   &:hover {
     background: $gradient-hover;
+  }
+
+  &:active {
+    color: $default;
   }
 }
 
@@ -104,4 +124,21 @@ body {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: $gap;
+}
+
+.follow {
+  background-color: transparent;
+  color: $white;
+  border-radius: 50px;
+  @extend %poppins-500;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 8px 25px;
+  border: 1px solid $default;
+  cursor: pointer;
+  transition: border-color .2s ease-in, background-color .2s ease-in;
+  &:focus {
+    outline: 1px solid $accent;
+    outline-offset: 2px;
+  }
 }

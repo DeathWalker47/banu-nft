@@ -26,6 +26,12 @@
   );
   cursor: pointer;
   user-select: none;
+
+  &:focus {
+    outline: 1px solid $accent;
+    outline-offset: 2px;
+  }
+
   &:hover {
     background: $gradient;
   }

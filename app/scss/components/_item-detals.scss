@@ -19,6 +19,11 @@
     background-color: #d02e84;
     border-radius: 18px;
     overflow: hidden;
+
+    &:focus {
+      outline: 1px solid $accent;
+      outline-offset: 2px;
+    }
   }
 
   &__img {
@@ -32,6 +37,11 @@
     position: absolute;
     top: 30px;
     right: 30px;
+
+    &:focus {
+      outline: 1px solid $accent;
+      outline-offset: 2px;
+    }
   }
 
   &__like-img {
@@ -83,6 +93,11 @@
     border-radius: 50%;
     overflow: hidden;
     margin-right: 10px;
+
+    &:focus {
+      outline: 1px solid $accent;
+      outline-offset: 2px;
+    }
   }
 
   &__author-img {
@@ -96,6 +111,21 @@
     font-size: 18px;
     line-height: 25px;
     color: $white;
+
+    a {
+      transition:  color .3s ease-in-out;
+      &:focus {
+        outline: 1px solid $accent;
+        outline-offset: 2px;
+      }
+      &:hover {
+        color: $accent;
+      }
+
+      &:active {
+        color: $default;
+      }
+    }
   }
 
   &__author-inf {
@@ -185,6 +215,20 @@
     line-height: 20px;
     color: $default;
     text-align: left;
+    transition: color .3s ease-in-out;
+
+    &:focus {
+      outline: 1px solid $accent;
+      outline-offset: 2px;
+    }
+
+    &:hover {
+      color: $white;
+    }
+
+    &:active {
+      color: $accent;
+    }
   }
 
   &__content-item {
@@ -193,7 +237,6 @@
     border-radius: 6px;
     background-color: $main-bg;
     padding: 23px 23px;
-    // display: none;
   }
 }
 
@@ -224,6 +267,11 @@
     border-radius: 50%;
     overflow: hidden;
     margin-right: 15px;
+
+    &:focus {
+      outline: 1px solid $accent;
+      outline-offset: 2px;
+    }
   }
 
   &__img {
@@ -250,7 +298,16 @@
     color: $white;
     transition: color 0.2s ease-in;
 
+    &:focus {
+      outline: 1px solid $accent;
+      outline-offset: 2px;
+    }
+
     &:hover {
+      color: $accent;
+    }
+
+    &:active {
       color: $accent;
     }
   }

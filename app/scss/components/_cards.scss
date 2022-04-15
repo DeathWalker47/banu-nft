@@ -1,11 +1,11 @@
 .cards {
   &--explore {
     .cards__item {
-    grid-column: 4 span;
+      grid-column: 4 span;
     }
   }
   &--bottom {
-    margin-bottom: 55px!important;
+    margin-bottom: 55px !important;
   }
   &__item {
     grid-column: 3 span;
@@ -31,6 +31,11 @@
     background-color: #2b3c50;
     border-radius: 12px;
     overflow: hidden;
+
+    &:focus {
+      outline: 1px solid $accent;
+      outline-offset: 2px;
+    }
   }
   &__img {
     width: 100%;
@@ -52,6 +57,11 @@
     height: 25px;
     background-color: transparent;
     cursor: pointer;
+
+    &:focus {
+      outline: 1px solid $accent;
+      outline-offset: 2px;
+    }
   }
   &__likes-img {
     width: 16px;
@@ -99,10 +109,16 @@
     @extend %poppins-500;
     color: $white;
     font-size: 18px;
-    transition: color .2s ease-in;
 
-    &:hover {
-      color: $accent;
+    a {
+      transition: color 0.3s ease-in-out;
+      &:focus {
+        outline: 1px solid $accent;
+        outline-offset: 2px;
+      }
+      &:hover {
+        color: $accent;
+      }
     }
   }
   &__drop {
@@ -115,25 +131,24 @@
     overflow-y: auto;
     top: 100%;
     right: 0;
-    padding: 10px 15px!important;
+    padding: 10px 15px !important;
     text-align: left;
     backdrop-filter: blur(5px);
-    background-color: rgba($color: $dark, $alpha: .6);
+    background-color: rgba($color: $dark, $alpha: 0.6);
     border: 1px solid #a1a1a1;
     border-radius: 12px;
     opacity: 0;
     visibility: hidden;
-    transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
     z-index: 5;
     &--active {
       opacity: 1;
       visibility: visible;
     }
-
   }
   &__drop-link {
     color: $white;
-    transition: color .3s ease-in-out;
+    transition: color 0.3s ease-in-out;
 
     &:hover {
       color: $accent;
@@ -144,9 +159,12 @@
     border: none;
     background-color: transparent;
     padding: 0;
-    // padding-top: 8px;
     cursor: pointer;
 
+    &:focus {
+      outline: 1px solid $accent;
+      outline-offset: 2px;
+    }
     &:hover {
       .card-item__content-dots-img {
         stroke: $accent;
@@ -157,7 +175,7 @@
     width: 30px;
     height: 16px;
     stroke: $default;
-    transition: all .3s linear;
+    transition: all 0.3s linear;
     vertical-align: middle;
   }
   &__like {
@@ -177,7 +195,7 @@
     object-fit: cover;
     vertical-align: middle;
     path {
-      transition: all .2s ease-in;
+      transition: all 0.2s ease-in;
     }
   }
   &__like-num {
@@ -203,6 +221,11 @@
     overflow: hidden;
     z-index: 3;
 
+    &:focus {
+      outline: 1px solid $accent;
+      outline-offset: 2px;
+    }
+
     &:nth-child(2) {
       margin-left: -17px;
       z-index: 2;
@@ -219,9 +242,18 @@
   }
   &__people-text {
     font-size: 14px;
-    transition: color .3s ease-in-out;
+    transition: color 0.3s ease-in-out;
+
+    &:focus {
+      outline: 1px solid $accent;
+      outline-offset: 2px;
+    }
 
     &:hover {
+      color: $white;
+    }
+
+    &:active {
       color: $white;
     }
   }
@@ -234,9 +266,18 @@
     text-transform: capitalize;
     a {
       color: $white;
-      transition: color .3s linear;
-  
+      transition: color 0.3s linear;
+
+
+      &:focus {
+        outline: 1px solid $accent;
+        outline-offset: 2px;
+      }
       &:hover {
+        color: $accent;
+      }
+
+      &:active {
         color: $accent;
       }
     }
@@ -249,8 +290,8 @@
     margin-left: auto;
     &::before {
       position: absolute;
-      content: '';
-      background-image: url('../images/svg/arrow-up.svg');
+      content: "";
+      background-image: url("../images/svg/arrow-up.svg");
       width: 15px;
       height: 15px;
       top: 50%;
@@ -265,6 +306,11 @@
     border-radius: 50%;
     overflow: hidden;
     margin-right: 6px;
+
+    &:focus {
+      outline: 1px solid $accent;
+      outline-offset: 2px;
+    }
     img {
       width: 100%;
       height: 100%;
@@ -275,9 +321,15 @@
     @extend %poppins-500;
     font-size: 16px;
     line-height: 24px;
-    transition: color .2s ease-in;
-
+    transition: color 0.2s ease-in;
+    &:focus {
+      outline: 1px solid $accent;
+      outline-offset: 2px;
+    }
     &:hover {
+      color: $white;
+    }
+    &:active {
       color: $white;
     }
   }
@@ -291,12 +343,12 @@
 
     &::before {
       position: absolute;
-      content: '';
-      background-image: url('../images/svg/bag.svg');
+      content: "";
+      background-image: url("../images/svg/bag.svg");
       background-repeat: no-repeat;
       top: 50%;
       transform: translateY(-50%);
-      left: 25%;      
+      left: 25%;
       width: 17px;
       height: 20px;
     }

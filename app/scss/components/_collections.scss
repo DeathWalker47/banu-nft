@@ -13,6 +13,10 @@
     background-color: $main-bg;
     padding: 20px;
     margin-bottom: 20px;
+
+    &:focus {
+      outline: 1px solid $accent;
+    }
   }
   &__big-images {
     border-radius: 25px;
@@ -54,7 +58,16 @@
     color: $white;
     transition: color 0.2s ease-in;
 
+    &:focus {
+      outline: 1px solid $accent;
+      outline-offset: 2px;
+    }
+
     &:hover {
+      color: $accent;
+    }
+
+    &:active {
       color: $accent;
     }
   }

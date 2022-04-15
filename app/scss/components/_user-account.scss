@@ -11,6 +11,10 @@
     width: 80px;
     height: 80px;
     margin-bottom: 10px;
+    &:focus {
+      outline: 1px solid $accent;
+      outline-offset: 2px;
+    }
   }
   &__img {
     width: 100%;
@@ -34,9 +38,15 @@
     text-transform: capitalize;
     transition:  color .2s ease-in;
     margin-bottom: 21px;
-
+    &:focus {
+      outline: 1px solid $accent;
+      outline-offset: 2px;
+    }
     &:hover {
       color: $accent;
+    }
+    &:active {
+      columns: $default;
     }
   }
   &__social {
@@ -47,16 +57,5 @@
       height: 27px;
     }
   }
-  &__follow {
-    background-color: transparent;
-    color: $white;
-    border-radius: 50px;
-    @extend %poppins-500;
-    font-size: 16px;
-    line-height: 24px;
-    padding: 8px 25px;
-    border: 1px solid $default;
-    cursor: pointer;
-    transition: border-color .2s ease-in, background-color .2s ease-in;
-  }
+  
 }

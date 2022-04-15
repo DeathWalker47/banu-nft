@@ -67,7 +67,6 @@
   &__form {
     max-height: 500px;
     padding-bottom: 20px;
-    // transition: all 0.3s ease-in-out;
     transition: all 0.2s linear;
 
     &--categories {
@@ -114,6 +113,11 @@
       background: linear-gradient(to bottom, rgba(32, 32, 39, 0.7), #202027);
     }
 
+    &:focus {
+      outline: 1px solid $accent;
+      outline-offset: 2px;
+    }
+
     &:hover {
       color: $accent;
     }
@@ -134,9 +138,13 @@
     &:not(:last-child) {
       margin-bottom: 9px;
     }
+
   }
 
   &__form-input {
+    &:focus + .filter__form-box {
+      outline: 1px solid $accent;
+    }
     &:checked+.filter__form-box {
       .filter__form-checkbox {
         // border-color: $accent;

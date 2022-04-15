@@ -34,11 +34,19 @@
     padding: 8px 18px;
     transition: color 0.2s ease-in;
 
-    
+    &:focus {
+      outline: 1px solid $accent;
+      outline-offset: 2px;
+    }
 
     &:hover {
       color: $white;
     }
+
+    &:active {
+      color: $accent;
+    }
+
   }
   .mixitup-control-active {
     background-color: $accent;

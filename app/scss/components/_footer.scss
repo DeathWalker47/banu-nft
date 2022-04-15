@@ -56,8 +56,17 @@
     line-height: 29px;
     transition: color 0.2s ease-in;
 
+    &:focus {
+      outline: 1px solid $accent;
+      outline-offset: 2px;
+    }
+
     &:hover {
       color: $white;
+    }
+
+    &:active {
+      color: $accent;
     }
   }
   &__newsletter {
@@ -85,11 +94,18 @@
     display: block;
     width: 42px;
     height: 41px;
+    border-radius: 25px;
     svg {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
+
+    &:focus {
+      outline: 1px solid $accent;
+      outline-offset: 2px;
+    }
+
     &:hover {
       .social__link-fill {
         fill: $accent;
@@ -97,6 +113,12 @@
       }
       .social__link-stroke {
         stroke: $white;
+      }
+    }
+
+    &:active {
+      .social__link-stroke {
+        stroke: $default;
       }
     }
   }
@@ -121,6 +143,11 @@
     line-height: 24px;
     color: $white;
 
+    &:focus {
+      outline: 1px solid $accent;
+      outline-offset: 2px;
+    }
+
     &::placeholder {
       color: $white;
       text-transform: capitalize;
@@ -139,7 +166,10 @@
     cursor: pointer;
     padding: 12px 21px;
     transition: all 0.2s ease-in;
-
+    &:focus {
+      outline: 1px solid $accent;
+      outline-offset: 2px;
+    }
     &:hover {
       background-color: $accent-hover;
     }

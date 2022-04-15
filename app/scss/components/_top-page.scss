@@ -58,6 +58,20 @@
     @extend %poppins-500;
     font-size: 18px;
     line-height: 25px;
+    transition: color .3s ease-in-out;
+    
+    &:focus {
+      outline: 1px solid $accent;
+      outline-offset: 2px;
+    }
+
+    &:hover {
+      color: $white;
+    }
+
+    &:active {
+      color: $accent;
+    }
   }
   &__link--active {
     color: $white;
