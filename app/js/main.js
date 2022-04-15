@@ -7,8 +7,16 @@ const modalOverlay = document.querySelector(".modal-overlay"),
   modalBtnClose = document.querySelector(".modal-content__btn"),
   modalLikeBtn = document.querySelectorAll(".card-item__likes-btn"),
   modalText = document.createElement("h2"), // создание элемента h2
-  fixedBlock = document.querySelectorAll(".fixed-block");
+  fixedBlock = document.querySelectorAll(".fixed-block"),
+  modalNumberEl = modalOpenLink.querySelector(".user-panel__notific-num");
 modalText.classList.add("modal-content__message");
+
+
+// Показываем количетсво элементов в корзине
+modalNumberEl.textContent = `${modalConent.querySelectorAll(".card-item").length}+`;
+if (modalConent.querySelectorAll(".card-item").length >= 99) {
+  modalNumberEl.textContent = 99 + '+';
+}
 
 // Функции для открытия  модакли
 const openModalWindow = () => {
@@ -28,6 +36,13 @@ const openModalWindow = () => {
       const self = e.currentTarget;
       self.closest(".card-item").remove();
       cartEmpty("You have cleared the basket of all items."); // сообщение, когда корзина будет пустой после удалеия элементов
+
+      if (modalConent.querySelectorAll(".card-item").length == 0) {
+        modalNumberEl.textContent = 0;
+      } else {
+
+        modalNumberEl.textContent = modalConent.querySelectorAll(".card-item").length +'+'//После удаления вставляет кол-во эл-в
+      }
     });
   });
 };
@@ -429,11 +444,9 @@ const filterHiddenHaight = document.querySelector(".filter__form--categories");
 if (loadMoreBtnFilter) {
   loadMoreBtnFilter.addEventListener("click", (e) => {
     const self = e.currentTarget;
-      filterHiddenHaight.style.maxHeight = filterHiddenHaight.scrollHeight + "px";
-      self.remove()
+    filterHiddenHaight.style.maxHeight = filterHiddenHaight.scrollHeight + "px";
+    self.remove();
 
-     
-      
     // if (self.dataset.hidden == "true") {
     //   filterHiddenHaight.style.maxHeight = filterHiddenHaight.scrollHeight + "px";
     //   self.classList.add("filter__load-btn--hidden");
@@ -445,15 +458,17 @@ if (loadMoreBtnFilter) {
     //   self.textContent = "Show more";
     //   self.dataset.hidden = "true";
     // }
-  })
+  });
 }
 
-
-const formInputFile = document.querySelector('.form__input-file');
-const formUpload = document.querySelector('.form__upload');
-formInputFile.onfocus = function() {
-  formUpload.classList.add('form__upload--focus');
-}
-formInputFile.onblur = function() {
-  formUpload.classList.remove('form__upload--focus');
+// Для фокусирования скрытого инпута для файлов.Чтоб задать оутлайн родителю инпута
+const formInputFile = document.querySelector(".form__input-file");
+const formUpload = document.querySelector(".form__upload");
+if (formInputFile) {
+  formInputFile.onfocus = function () {
+    formUpload.classList.add("form__upload--focus");
+  };
+  formInputFile.onblur = function () {
+    formUpload.classList.remove("form__upload--focus");
+  };
 }
