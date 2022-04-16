@@ -11,11 +11,12 @@ const modalOverlay = document.querySelector(".modal-overlay"),
   modalNumberEl = modalOpenLink.querySelector(".user-panel__notific-num");
 modalText.classList.add("modal-content__message");
 
-
 // Показываем количетсво элементов в корзине
-modalNumberEl.textContent = `${modalConent.querySelectorAll(".card-item").length}+`;
+modalNumberEl.textContent = `${
+  modalConent.querySelectorAll(".card-item").length
+}+`;
 if (modalConent.querySelectorAll(".card-item").length >= 99) {
-  modalNumberEl.textContent = 99 + '+';
+  modalNumberEl.textContent = 99 + "+";
 }
 
 // Функции для открытия  модакли
@@ -40,8 +41,8 @@ const openModalWindow = () => {
       if (modalConent.querySelectorAll(".card-item").length == 0) {
         modalNumberEl.textContent = 0;
       } else {
-
-        modalNumberEl.textContent = modalConent.querySelectorAll(".card-item").length +'+'//После удаления вставляет кол-во эл-в
+        modalNumberEl.textContent =
+          modalConent.querySelectorAll(".card-item").length + "+"; //После удаления вставляет кол-во эл-в
       }
     });
   });
@@ -85,6 +86,13 @@ modalOverlay.addEventListener("click", (e) => {
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") {
     closeModalWindow();
+
+    //ТУт если у класса дроп меню есть класс актив, то при нажатии клавиши еск закрывается дроп меню
+    document.querySelectorAll(".card-item__drop-list").forEach((el) => {
+      if (el.classList.contains("card-item__drop-list--active")) {
+        el.classList.remove("card-item__drop-list--active");
+      }
+    });
   }
 });
 
