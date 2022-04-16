@@ -154,18 +154,23 @@
     }
   }
   &__btn {
+    @include flex-all-center;
     position: absolute;
+    height: 54px;
+    width: 68px;
     top: 5px;
     right: 7px;
-    @include flex-all-center;
+    background-color: $accent;
+    background-image: url('../images/svg/tg.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 26px 30px;
+
     padding: 0;
     border: none;
-    background-color: transparent;
-    background-color: $accent;
     border-radius: 50px;
     cursor: pointer;
-    padding: 12px 21px;
-    transition: all 0.2s ease-in;
+    transition: background-color 0.2s ease-in;
     &:focus {
       outline: 1px solid $accent;
       outline-offset: 2px;
@@ -174,9 +179,5 @@
       background-color: $accent-hover;
     }
   }
-  &__btn-img {
-    width: 26px;
-    height: 30px;
-    object-fit: cover;
-  }
+ 
 }

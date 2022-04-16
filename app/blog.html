@@ -1,17 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="images/favicon.png" sizes="30x32" rel="icon" type="image/png">
-  <link rel="stylesheet" href="css/style.min.css">
-  <title>Blog</title>
-  <script defer src="js/main.min.js"></script>
-</head>
-<body>
-  <div class="wrapper">
-    <header class="header fixed-block">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="images/favicon.png" sizes="30x32" rel="icon" type="image/png" />
+    <link rel="stylesheet" href="css/style.min.css" />
+    <title>Blog</title>
+    <script defer src="js/main.min.js"></script>
+  </head>
+  <body>
+    <div class="search fixed-block">
+  <div class="container">
+    <div class="search__top">
+      <a href="index.html" class="logo search__logo" aria-hidden="true">
+        <img loading="lazy" src="./images/logo.png" alt="logo" aria-hidden="true">
+      </a>
+      <button class="search__close btn-reset" aria-label="Close search form">
+        <svg>
+          <use xlink:href="./images/sprite.svg#close-btn"></use>
+        </svg>
+      </button>
+    </div>
+    <form action="#" class="search__form form">
+      <input class="search__input form__input" type="search" placeholder="Search">
+    </form>
+  </div>
+</div>
+    <div class="wrapper">
+      <header class="header fixed-block">
   <div class="container-content">
     <div class="header__inner">
       <a href="index.html" class="logo" aria-label="logo">
@@ -72,8 +89,8 @@
         </ul>
       </nav>
       <div class="user-panel">
-        <button class="user-panel__search" aria-label="Search">
-          <svg class="user-panel__btn-search">
+        <button class="user-panel__search btn-reset" aria-label="Search">
+          <svg>
             <use xlink:href="./images/sprite.svg#search"></use>
           </svg>
         </button>
@@ -96,8 +113,8 @@
     </div>
   </div>
 </header>
-    <main class="main">
-      <section class="head">
+      <main class="main">
+        <section class="head">
   <div class="container">
     <div class="head__content">
       <h1 class="head__title">
@@ -115,8 +132,7 @@
       </div>
     </div>
   </div>
-</section>
-      <section class="blog">
+</section> <section class="blog">
   <h2 class="visually-hidden">Blog</h2>
   <div class="container">
     <ul class="blog-list grid">
@@ -303,7 +319,7 @@
     </ul>
   </div>
 </section>
-      <section class="modals">
+        <section class="modals">
   <div class="modal-overlay">
     <div class="modal fixed-block">
       <div class="container modal-content">
@@ -948,8 +964,8 @@
     </div>
   </div>
 </section>
-    </main>
-    <footer class="footer">
+      </main>
+      <footer class="footer">
   <div class="container">
     <div class="footer__inner">
       <div class="footer__info">
@@ -1055,11 +1071,7 @@
         </p>
         <form action="#" class="footer-form">
           <input type="text" class="footer-form__input" placeholder="Email Address">
-          <button class="footer-form__btn" type="submit" aria-label="Submit">
-            <svg class="footer-form__btn-img" aria-hidden="true">
-              <use xlink:href="./images/sprite.svg#tg"></use>
-            </svg>
-          </button>
+          <button class="footer-form__btn" type="submit" aria-label="Submit"></button>
         </form>
       </div>
     </div>
@@ -1071,6 +1083,6 @@
     </div>
 </footer>
 
-  </div>
-</body>
+    </div>
+  </body>
 </html>

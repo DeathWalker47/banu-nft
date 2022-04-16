@@ -7,9 +7,24 @@ const modalOverlay = document.querySelector(".modal-overlay"),
   modalBtnClose = document.querySelector(".modal-content__btn"),
   modalLikeBtn = document.querySelectorAll(".card-item__likes-btn"),
   modalText = document.createElement("h2"), // создание элемента h2
-  fixedBlock = document.querySelectorAll(".fixed-block"),
-  modalNumberEl = modalOpenLink.querySelector(".user-panel__notific-num");
-modalText.classList.add("modal-content__message");
+  fixedBlock = document.querySelectorAll(".fixed-block"),// добавляется фиксированным блокам. чтоб они не прыгали, когда убираешь прыжок у сайта
+  modalNumberEl = modalOpenLink.querySelector(".user-panel__notific-num"),
+  btnSearchOpen = document.querySelector(".user-panel__search"),
+  btnSearchClose = document.querySelector(".search__close"),
+  searchForm = document.querySelector(".search");
+
+// Открыть форму поиска
+btnSearchOpen.addEventListener("click", (e) => {
+  searchForm.classList.add("search--active");
+  disableScroll();
+});
+
+btnSearchClose.addEventListener("click", (e) => {
+  searchForm.classList.remove("search--active");
+  removeDisableScroll();
+});
+
+// modalText.classList.add("modal-content__message");
 
 // Показываем количетсво элементов в корзине
 modalNumberEl.textContent = `${
@@ -19,17 +34,28 @@ if (modalConent.querySelectorAll(".card-item").length >= 99) {
   modalNumberEl.textContent = 99 + "+";
 }
 
+// Убираем прыжок сайта при открытии модалки / формы поиска
+const disableScroll = () => {
+  let paddingOffset = window.innerWidth - document.body.offsetWidth + "px"; // Находим ширину скролла путем нахождение ширины ОКНА, из которой вычитаем ширину документа без учета скролла
+  document.body.style.paddingRight = paddingOffset; // далее делаем документу паддинг, равной ширине скролла,которую мы нашли выше
+  fixedBlock.forEach((el) => (el.style.paddingRight = paddingOffset)); // всем фиксированным блокам задаем тот же паддинг,чтоб они не прыгали
+  document.querySelector("body").classList.add("hidden");
+};
+
+// Тут мы убираем паддинг(т.е. обратное действие функции disableScroll)
+const removeDisableScroll = () => {
+  document.body.style.paddingRight = 0;
+  fixedBlock.forEach((el) => (el.style.paddingRight = 0));
+  document.querySelector("body").classList.remove("hidden");
+};
+
 // Функции для открытия  модакли
 const openModalWindow = () => {
   modalOverlay.classList.add("modal-overlay--visible");
   modalWindow.classList.add("modal--visible");
 
-  // Убираем прыжок сайта при открытии модалки
-  let paddingOffset = window.innerWidth - document.body.offsetWidth + "px"; // Находим ширину скролла путем нахождение ширины ОКНА, из которой вычитаем ширину документа без учета скролла
-  document.body.style.paddingRight = paddingOffset; // далее делаем документу паддинг, равной ширине скролла,которую мы нашли выше
-  fixedBlock.forEach((el) => (el.style.paddingRight = paddingOffset)); // всем фиксированным блокам задаем тот же паддинг,чтоб они не прыгали
-
-  document.querySelector("body").classList.add("hidden");
+  // функция убирает прыжок сайта при открытии модалки
+  disableScroll();
 
   //Удаление элементов по клику на сердечко
   modalLikeBtn.forEach((el) => {
@@ -51,14 +77,13 @@ const openModalWindow = () => {
 const closeModalWindow = () => {
   modalOverlay.classList.remove("modal-overlay--visible");
   modalWindow.classList.remove("modal--visible");
-  document.querySelector("body").classList.remove("hidden");
 
-  // Тут мы убираем паддинг
-  document.body.style.paddingRight = 0;
-  fixedBlock.forEach((el) => (el.style.paddingRight = 0));
+  // функция убирает паддинг
+  removeDisableScroll();
 };
 
 // функция для проверки,есть ли элементы в корзине, если нет,то будет выводиться сообщение,которое укажите в функции
+modalText.classList.add("modal-content__message");
 const cartEmpty = (message) => {
   if (modalWindow.querySelectorAll(".card-item").length === 0) {
     modalText.textContent = message;

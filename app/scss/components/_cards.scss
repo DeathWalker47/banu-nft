@@ -48,10 +48,13 @@
     top: 14px;
     right: 17px;
     border-radius: 8px;
-    padding: 0 6px;
+    padding: 1px 6px;
     background-color: $main-bg;
   }
   &__likes-btn {
+    display: block;
+    width: 16px;
+    height: 15px;
     padding: 0;
     border: none;
     height: 25px;
@@ -62,10 +65,12 @@
       outline: 1px solid $accent;
       outline-offset: 2px;
     }
-  }
-  &__likes-img {
-    width: 16px;
-    height: 15px;
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
   &__likes-num {
     color: $white;
@@ -161,6 +166,21 @@
       color: $accent;
     }
   }
+  &__content-dots {
+    display: block;
+    width: 30px;
+    height: 16px;
+    transition: color 0.3s linear;
+    color: $default;
+
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      stroke: currentColor;
+      object-fit: cover;
+    }
+  }
   &__content-dots,
   &__like-btn {
     border: none;
@@ -173,36 +193,37 @@
       outline-offset: 2px;
     }
     &:hover {
+      color: $accent;
       .card-item__content-dots-img {
         stroke: $accent;
       }
     }
   }
-  &__content-dots-img {
-    width: 30px;
-    height: 16px;
-    stroke: $default;
-    transition: all 0.3s linear;
-    vertical-align: middle;
-  }
+
   &__like {
     display: flex;
     align-items: center;
   }
   &__like-btn {
+    display: block;
+    width: 20px;
+    height: 20px;
+    color: $default;
+
     &:hover {
       svg path {
         stroke: $accent;
       }
     }
-  }
-  &__like-img {
-    width: 20px;
-    height: 20px;
-    object-fit: cover;
-    vertical-align: middle;
-    path {
-      transition: all 0.2s ease-in;
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      stroke: currentColor;
+      path {
+        transition: stroke 0.3s linear;
+      }
     }
   }
   &__like-num {
@@ -274,7 +295,6 @@
     a {
       color: $white;
       transition: color 0.3s linear;
-
 
       &:focus {
         outline: 1px solid $accent;
