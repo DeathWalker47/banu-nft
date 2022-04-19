@@ -41,6 +41,10 @@
     text-transform: capitalize;
     color: $default;
     transition: color 0.2s ease-in-out;
+    
+    &--active {
+      color: $accent;
+    }
 
     &:focus {
       outline: 1px solid $accent;
@@ -58,10 +62,7 @@
     &:active {
       color: $accent;
     }
-    &--active {
-      color: $accent;
-      pointer-events: none;
-    }
+   
   }
 }
 .user-panel {

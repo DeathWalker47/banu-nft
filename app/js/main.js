@@ -24,7 +24,6 @@ btnSearchClose.addEventListener("click", (e) => {
   removeDisableScroll();
 });
 
-// modalText.classList.add("modal-content__message");
 
 // Показываем количетсво элементов в корзине
 modalNumberEl.textContent = `${
