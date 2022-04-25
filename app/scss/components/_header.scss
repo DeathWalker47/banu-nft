@@ -65,6 +65,47 @@
    
   }
 }
+.burger {
+  @include burder;
+}
+// .burger {
+//   position: relative;
+//   display: none;
+//   border: none;
+//   background-color: transparent;
+//   padding: 0;
+//   width: 30px;
+//   height: 22px;
+
+//   &::before {
+//     content: '';
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 2px;
+//     background-color: $accent;
+//   }
+
+//   &::after {
+//     content: '';
+//     position: absolute;
+//     bottom: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 2px;
+//     background-color: $accent;
+//   }
+
+//   &__list {
+//     position: relative;
+//     display: block;
+//     width: 30px;
+//     height: 2px;
+//     background-color: $accent;
+//   }
+// }
+
 .user-panel {
   @include flex-v-center;
   margin-left: auto;

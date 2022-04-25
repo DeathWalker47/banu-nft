@@ -62,12 +62,15 @@ $gap: 30px;
   font-style: normal;
 }
 
-// %burger-width{
-//   width: ;
-// }
-// %burger-height{
-//   height: ;
-// }
-// %burger-line-height{
-//   height: ;
-// }
+%burger-width{
+  width: 30px;
+}
+%burger-height{
+  height: 20px;
+}
+%burger-line-height{
+  height: 2px ;
+}
+%burder-color {
+  color: $accent;
+}
