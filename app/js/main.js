@@ -147,7 +147,7 @@ countNumbres.forEach((el) => {
 });
 
 // Swiper slider
-const slidersFunction = function (sliderClassName, SlidePerView, next, prev) {
+const slidersFunction = function (sliderClassName, SlidePerView, next, prev, slideMobileView4, slideMobileView2, slideMobileView3, ) {
   new Swiper(sliderClassName, {
     spaceBetween: 30,
     speed: 800,
@@ -157,29 +157,37 @@ const slidersFunction = function (sliderClassName, SlidePerView, next, prev) {
       nextEl: next,
       prevEl: prev,
     },
+    breakpoints: {
+      // when window width is >= 320px
+      // 320: {
+      //   slidesPerView: 2,
+      //   spaceBetween: 20
+      // },
+      // // when window width is >= 992
+      576: {
+        slidesPerView: slideMobileView4,
+      },
+      992: {
+        slidesPerView: slideMobileView2,
+      },
+      // // when window width is >= 1400
+      1400: {
+        slidesPerView: slideMobileView3,
+      }
+    }
   });
 };
 // Слайдер Creators
-slidersFunction(".creators-swiper", 6, ".creators-next", ".creators-prev");
+slidersFunction(".creators-swiper", 1, ".creators-next", ".creators-prev", 2, 3, 6);
 
 // Слайдер Collections
-slidersFunction(
-  ".collections-slider",
-  3,
-  ".collections-next",
-  ".collections-prev"
-);
+slidersFunction(".collections-slider",1,".collections-next",".collections-prev", 1,2,3);
 
 // Слайдер Questions
-slidersFunction(".questions-slider", 3, ".questions-next", ".questions-prev");
+slidersFunction(".questions-slider", 1, ".questions-next", ".questions-prev", 1,2,3);
 
 // Слайдер Explore-more
-slidersFunction(
-  ".explore-more__slider",
-  4,
-  ".explore-more-next",
-  ".explore-more-prev"
-);
+slidersFunction(".explore-more__slider",1,".explore-more-next",".explore-more-prev",2, 3, 4);
 
 // Filter MisitUp
 

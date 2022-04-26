@@ -21,6 +21,7 @@
   padding: 16px 15px;
   background-color: $main-bg;
   border-radius: 8px;
+  box-sizing: border-box;
   &__top {
     position: relative;
     margin-bottom: 16px;

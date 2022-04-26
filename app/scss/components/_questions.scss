@@ -8,8 +8,9 @@
 .questions-slider {
   &__item {
     box-sizing: border-box;
-    max-width: 410px;
+    // max-width: 410px;
     width: 100%;
+    height: auto;
     border-radius: 8px;
     background-color: $main-bg;
     padding: 40px 30px 50px 40px;

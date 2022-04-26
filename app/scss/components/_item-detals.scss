@@ -3,7 +3,7 @@
 
   &__inner {
     @include flex;
-    flex-wrap: wrap;
+    align-items: start;
     margin-bottom: 80px;
   }
 
