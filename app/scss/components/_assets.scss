@@ -16,6 +16,30 @@
     grid-column: 9 span;
   }
 }
+.filter-btn {
+  position: fixed;
+  right: 10px;
+  bottom: 50px;
+  width: 48px;
+  height: 48px;
+  color: $accent;
+  z-index: 4;
+  padding: 5px;
+  display: none;
+  background-color: rgba($color: $dark, $alpha: .7);
+  border: 1px solid #ff512f;
+  border-radius: 5px;
+  svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    fill: currentColor;
+  }
+  &:focus {
+    outline: 1px solid $accent;
+    outline-offset: 2px;
+  }
+}
 
 .filter {
   background-color: $main-bg;

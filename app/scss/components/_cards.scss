@@ -289,11 +289,13 @@
   }
   &__owned {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
   }
   &__owned-text {
     font-size: 16px;
     text-transform: capitalize;
+    margin-right: auto;
     a {
       color: $white;
       transition: color 0.3s linear;
@@ -316,7 +318,6 @@
     font-size: 16px;
     color: $white;
     padding-left: 24px;
-    margin-left: auto;
     &::before {
       position: absolute;
       content: "";
