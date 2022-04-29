@@ -405,6 +405,11 @@
     display: block;
   }
   .dropdown-menu__item {
+    &:last-child {
+      padding-bottom: 30px;
+    }
+  }
+  .dropdown-menu__item {
     margin-bottom: 8px;
     .menu__item-link {
       font-size: 18px;
