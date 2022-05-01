@@ -44,6 +44,7 @@ btnSearchOpen.addEventListener("click", (e) => {
 });
 
 btnSearchClose.addEventListener("click", (e) => {
+  document.querySelector('.search__input').value = '';
   searchForm.classList.remove("search--active");
   removeDisableScroll();
 });
